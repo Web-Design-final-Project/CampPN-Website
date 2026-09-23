@@ -2,54 +2,55 @@
 <html lang="en">
 
 <head>
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=block" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Notifications — CampPN</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./src/style.css" />
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=block" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Notifications — CampPN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../src/style.css" />
 </head>
 
 <body class="bg-slate-50 text-slate-800 antialiased">
 
-  <!-- ============ Navbar ============ -->
-  <header
-    class="navbar sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-sm transition-all duration-300">
-    <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:px-10">
-      <a href="index.html" class="inline-flex items-center gap-2 text-xl font-black tracking-[-0.02em] text-slate-800">
-        <span
-          class="flex h-7.5 w-7.5 items-center justify-center rounded-[9px] bg-linear-to-br from-violet-700 to-violet-500 text-sm font-extrabold text-white">C</span>
-        Camp<span class="text-violet-700">PN</span>
-      </a>
-      <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
-        <a href="index.html"
-          class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Home</a>
-        <a href="explore-events.html"
-          class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Explore
-          Events</a>
-        <a href="my-events.html"
-          class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">My
-          Events</a>
-        <a href="notifications.html" class="relative mx-3 py-2 text-sm font-medium text-violet-700">Notifications</a>
-      </nav>
-      <div class="flex items-center gap-2 sm:gap-3">
-        <button type="button"
-          class="hidden h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 sm:inline-flex"
-          aria-label="Search"><span class="material-symbols-outlined">search</span></button>
-        <a href="notifications.html"
-          class="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet-200 bg-violet-50 text-violet-700"
-          aria-label="Notifications, 3 unread">
-          <span class="material-symbols-outlined">notifications</span>
-          <span class="absolute right-1.5 top-1.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-violet-700"
-            aria-hidden="true"></span>
-        </a>
-        <div
-          class="inline-flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-white bg-violet-200 text-xs font-bold text-violet-700 shadow-[0_0_0_1.5px_rgba(148,163,184,0.35)]"
-          aria-hidden="true">S</div>
-      </div>
-    </div>
-  </header>
+    <!-- ============ Navbar ============ -->
+    <header
+        class="navbar sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-sm transition-all duration-300">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:px-10">
+            <a href="../index.html"
+                class="inline-flex items-center gap-2 text-xl font-black tracking-[-0.02em] text-slate-800">
+                <img src="../src/assets/CampPN.png" alt="Logo" class="h-8 w-8">
+                Camp<span class="text-violet-700">PN</span>
+            </a>
+            <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
+                <a href="../index.html"
+                    class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Home</a>
+                <a href="./Explore-Event.html"
+                    class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Explore
+                    Events</a>
+                <a href="./My-Event.html"
+                    class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">My
+                    Events</a>
+                <a href="./Notifications.html"
+                    class="relative mx-3 py-2 text-sm font-medium text-violet-700">Notifications</a>
+            </nav>
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button type="button"
+                    class="hidden h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 sm:inline-flex"
+                    aria-label="Search"><span class="material-symbols-outlined">search</span></button>
+                <a href="./Notifications.html"
+                    class="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet-200 bg-violet-50 text-violet-700"
+                    aria-label="Notifications, 3 unread">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span
+                        class="absolute right-1.5 top-1.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-violet-700"
+                        aria-hidden="true"></span>
+                </a>
+                <div class="inline-flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-white bg-violet-200 text-xs font-bold text-violet-700 shadow-[0_0_0_1.5px_rgba(148,163,184,0.35)]"
+                    aria-hidden="true">S</div>
+            </div>
+        </div>
+    </header>
