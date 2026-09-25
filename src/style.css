@@ -7,3 +7,40 @@
     'GRAD' 0,
     'opsz' 24
 }
+
+.chip-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: .5rem 1rem;
+  border-radius: 9999px;
+  font-size: .875rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  background: #fff;
+  cursor: pointer;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+
+.chip:hover {
+  border-color: #c4b5fd;
+  color: #7c3aed;
+}
+
+.chip-input:checked+.chip {
+  background: #7c3aed;
+  border-color: #7c3aed;
+  color: #fff;
+}
+
+.chip-input:focus-visible+.chip {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
