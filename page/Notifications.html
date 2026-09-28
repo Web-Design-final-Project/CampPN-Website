@@ -54,3 +54,430 @@
             </div>
         </div>
     </header>
+
+
+    <main class="wrap px-6 py-10">
+        <div class="flex items-start justify-between gap-4 flex-wrap mb-7">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight">Notifications</h1>
+                <p class="text-[15px] mt-1.5">9 unread — mostly about the workshops you've
+                    registered for.</p>
+            </div>
+            <div class="flex gap-2">
+                <button class="pill-action">Mark all read</button>
+                <button class="pill-action">
+                    <span class="setting material-symbols-outlined">
+                    settings
+                    </span>
+                    Preferences
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">
+            <div>
+                <div class="flex gap-2 overflow-x-auto pb-1 mb-2" id="chips">
+                    <button class="chip on" data-filter="all">All<span class="n">18</span></button>
+                    <button class="chip" data-filter="events">Events<span class="n">7</span></button>
+                    <button class="chip" data-filter="registration">Registration<span class="n">4</span></button>
+                    <button class="chip" data-filter="social">Social<span class="n">3</span></button>
+                    <button class="chip" data-filter="system">System<span class="n">4</span></button>
+                </div>
+                <div id="panels">
+                    <div data-panel="all" class="active">
+                        <div class="day-label">TODAY</div>
+                        <div class="notif unread" data-cat="events">
+                            <div class="ic white">
+                                <span class="material-symbols-outlined">
+                                    alarm
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">Starting soon<span class="dot"></span></div>
+                                <p class="notif__text">UI/UX Design Workshop begins in 2 hours, Auditorium A.</p>
+                                <div class="notif__meta">10:00 AM · Events</div>
+                            </div>
+                        </div>
+                        <div class="notif unread" data-cat="registration">
+                            <div class="ic white">
+                                <span class="material-symbols-outlined">
+                                    check
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">Registration confirmed<span class="dot"></span></div>
+                                <p class="notif__text">You're in for Career Workshop 2026. A calendar invite has been
+                                    sent to your inbox.</p>
+                                <div class="notif__meta">9:14 AM · Registration</div>
+                                <div class="row-actions"><button class="pill-action solid">Add to
+                                        calendar</button><button class="pill-action">View ticket</button></div>
+                            </div>
+                        </div>
+                        <div class="notif unread" data-cat="events">
+                            <div class="ic white">
+                                <span class="material-symbols-outlined">
+                                    edit_calendar
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">Time changed<span class="dot"></span></div>
+                                <p class="notif__text">UI/UX Design Workshop now starts at 3:00 PM, moved from 2:00 PM.
+                                </p>
+                                <div class="notif__meta">8:02 AM · Events</div>
+                            </div>
+                        </div>
+                        <div class="notif unread" data-cat="social">
+                            <div class="ic white">
+                                <span class="material-symbols-outlined">
+                                    group_add
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">Friend joined an event<span class="dot"></span></div>
+                                <p class="notif__text">Maya Torres just registered for Career Workshop 2026 — you'll see
+                                    them there.</p>
+                                <div class="notif__meta">7:40 AM · Social</div>
+                            </div>
+                        </div>
+
+                        <div class="notif unread" data-cat="registration">
+                            <div class="ic white">
+                                <span class="material-symbols-outlined">
+                                    trending_up
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">Waitlist moved up<span class="dot"></span></div>
+                                <p class="notif__text">A spot opened in Robotics Meetup — you're now #1 on the waitlist.
+                                </p>
+                                <div class="notif__meta">6:55 AM · Registration</div>
+                            </div>
+                        </div>
+                        <div class="day-label">YESTERDAY</div>
+                        <div class="notif" data-cat="events">
+                            <div class="ic red">
+                                <span class="material-symbols-outlined">
+                                    pin_drop
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">Location changed</div>
+                                <p class="notif__text">Career Workshop 2026 has moved to Auditorium A.</p>
+                                <div class="notif__meta">4:47 PM · Events</div>
+                            </div>
+                        </div>
+
+                        <div class="notif" data-cat="social">
+                            <div class="ic purple">
+                                <span class="material-symbols-outlined">
+                                    workspace_premium
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">Badge unlocked</div>
+                                <p class="notif__text">"Early Bird" — you registered for 5 events before doors opened.
+                                </p>
+                                <div class="notif__meta">1:20 PM · Social</div>
+                            </div>
+                        </div>
+
+                        <div class="notif" data-cat="system">
+                            <div class="ic purple">
+                                <span class="material-symbols-outlined">
+                                    build
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">Scheduled maintenance</div>
+                                <p class="notif__text">CampPN will be briefly unavailable Sunday, 2–3 AM, for updates.
+                                </p>
+                                <div class="notif__meta">11:05 AM · System</div>
+                            </div>
+                        </div>
+                        <div class="day-label">OLDER</div>
+                        <div class="notif" data-cat="events">
+                            <div class="ic red">
+                                <span class="material-symbols-outlined">
+                                    event_busy
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">Event cancelled</div>
+                                <p class="notif__text">Campus Sports Day has been cancelled by the organizer.</p>
+                                <div class="notif__meta">Oct 3 · Events</div>
+                            </div>
+                        </div>
+                        <div class="notif" data-cat="system">
+                            <div class="ic purple">
+                                <span class="material-symbols-outlined">
+                                    shield_person
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="notif__title">New sign-in detected</div>
+                                <p class="notif__text">Your account was accessed from a new device in Phnom Penh.</p>
+                                <div class="notif__meta">Oct 1 · System</div>
+                                <div class="row-actions"><button class="pill-action">This was me</button><button
+                                        class="pill-action">Secure account</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-panel="events">
+                        <div class="empty">
+                            <div class="ic gray">
+                                <span class="material-symbols-outlined">
+                                    tune
+                                </span>
+                            </div>
+                            <h3 class="font-semibold text-[15px]">Filtered view</h3>
+                            <p class="text-sm mt-1 max-w-xs">Switch back to "All" to see every notification — this demo
+                                view keeps the category counts above in sync.</p>
+                        </div>
+                    </div>
+                    <div data-panel="registration">
+                        <div class="empty">
+                            <div class="ic gray">
+                                <span class="material-symbols-outlined">
+                                    confirmation_number
+                                </span>
+                            </div>
+                            <h3 class="font-semibold text-[15px]">Registration updates</h3>
+                            <p class="text-sm mt-1 max-w-xs">Confirmations, waitlists and ticket changes will appear
+                                here.</p>
+                        </div>
+                    </div>
+                    <div data-panel="social">
+                        <div class="empty">
+                            <div class="ic gray">
+                                <span class="material-symbols-outlined">
+                                    chat_bubble
+                                </span>
+                            </div>
+                            <h3 class="font-semibold text-[15px]">Social activity</h3>
+                            <p class="text-sm mt-1 max-w-xs">Friends joining events and badges you earn show up here.
+                            </p>
+                        </div>
+                    </div>
+                    <div data-panel="system">
+                        <div class="empty">
+                            <div class="ic gray">
+                                <span class="material-symbols-outlined">
+                                    settings_suggest
+                                </span>
+                            </div>
+                            <h3 class="font-semibold text-[15px]">System</h3>
+                            <p class="text-sm mt-1 max-w-xs">Account and platform updates will show up here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="flex flex-col gap-5">
+                <div class="card">
+                    <h3 class="font-semibold text-[15px] mb-3">This week</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-[13px] mb-1" ><span>Events</span><span>7</span></div>
+                            <div class="stat-track">
+                                <div class="stat-fill" style="width:70%; background: #5B21B6;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[13px] mb-1"><span>Registration</span><span>4</span>
+                            </div>
+                            <div class="stat-track">
+                                <div class="stat-fill" style="width:40%; background:var(--green);"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[13px] mb-1 "><span>Social</span><span>3</span></div>
+                            <div class="stat-track ">
+                                <div class="stat-fill" style="width:30%; background: #a1ecd4;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[13px] mb-1"><span>System</span><span>4</span></div>
+                            <div class="stat-track">
+                                <div class="stat-fill" style="width:40%; background:#9C97AC;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-semibold text-[15px] mb-3">Delivery preferences</h3>
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between"><span class="text-[13.5px]">Push
+                                notifications</span>
+                            <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+                        </div>
+                        <div class="flex items-center justify-between"><span class="text-[13.5px]">Email digest</span>
+                            <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+                        </div>
+                        <div class="flex items-center justify-between"><span class="text-[13.5px]">SMS reminders</span>
+                            <div class="toggle" onclick="this.classList.toggle('on')"></div>
+                        </div>
+                        <div class="flex items-center justify-between"><span class="text-[13.5px]">Friend
+                                activity</span>
+                            <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-e" style="background:var(--violet-950); border-color:var(--violet-950); color:#fff;">
+                    <h3 class="font-semibold text-[15px] mb-1.5">Upcoming today</h3>
+                    <p class="text-[13.5px]" style="color:#D8CEF3;">UI/UX Design Workshop, 3:00 PM, Auditorium A.</p>
+                    <button class="pill-action mt-3">View event</button>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-semibold text-[15px] mb-3">Suggested for you</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 box-event px-2">
+                            <div class="ic lightgrey" style="width:34px;height:34px;font-size:.9rem;">
+                                <span class="material-symbols-outlined">
+                                  podium
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-[13.5px] font-medium leading-tight">Public Speaking 101</div>
+                                <div class="text-[12px]" style="color:var(--ink-soft)">Sat · 12 friends going</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 box-event px-2">
+                            <div class="ic lightgrey" style="width:34px;height:34px;font-size:.9rem;">
+                                <span class="material-symbols-outlined">
+                                    sports_esports
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-[13.5px] font-medium leading-tight">Game Jam Kickoff</div>
+                                <div class="text-[12px]" style="color:var(--ink-soft)">Next Tue · New</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 box-event px-2">
+                            <div class="ic lightgrey" style="width:34px;height:34px;font-size:.9rem;">
+                                <span class="material-symbols-outlined">
+                                   local_cafe
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-[13.5px] font-medium leading-tight">Coffee & Career Chat</div>
+                                <div class="text-[12px]" style="color:var(--ink-soft)">Oct 12 · 6 spots left</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="pill-action mt-4 w-full">Browse all events</button>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-semibold text-[15px] mb-3">Need help?</h3>
+                    <div class="space-y-2 text-[13.5px]">
+                        <a href="#" class="flex items-center justify-between py-1.5"
+                            style="color:var(--ink)">Notification settings <span
+                                style="color:var(--ink-soft)">
+                                <span class="material-symbols-outlined">
+                                    chevron_right
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between py-1.5" style="color:var(--ink)">Report a
+                            problem <span style="color:var(--ink-soft)">
+                                <span class="material-symbols-outlined">
+                                    chevron_right
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between py-1.5" style="color:var(--ink)">Contact
+                            support <span style="color:var(--ink-soft)">
+                                <span class="material-symbols-outlined">
+                                    chevron_right
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:grid-cols-2 md:px-10 lg:grid-cols-4">
+            <div class="lg:col-span-1">
+                <a href="index.html"
+                    class="inline-flex items-center gap-2 text-xl font-black tracking-[-0.02em] text-white">
+                    <img src="../src/assets/CampPN.png" alt="Logo" class="h-8 w-8 rounded-full object-cover">
+                    Camp<span class="text-violet-300">PN</span>
+                </a>
+                <p class="mt-3 max-w-[28ch] text-sm text-slate-400">Everything happening on campus, in one place.</p>
+                <div class="mt-4 flex gap-2">
+                    <a href="#"
+                        class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
+                        aria-label="CampPN on Facebook"><span class="material-symbols-outlined">thumb_up</span></a>
+                    <a href="#"
+                        class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
+                        aria-label="CampPN on Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
+                    <a href="#"
+                        class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
+                        aria-label="CampPN on Telegram"><span class="material-symbols-outlined">send</span></a>
+                </div>
+            </div>
+
+            <div>
+                <div class="mb-3 text-sm font-semibold text-white" style="font-family:'Poppins',sans-serif;">Platform
+                </div>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="../index.html" class="text-slate-300 transition-colors hover:text-white">About</a></li>
+                    <li><a href="/page/Explore-Event.html"
+                            class="text-slate-300 transition-colors hover:text-white">Explore Events</a>
+                    </li>
+                    <li><a href="/page/My-Event.html" class="text-slate-300 transition-colors hover:text-white">My
+                            Events</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="mb-3 text-sm font-semibold text-white" style="font-family:'Poppins',sans-serif;">Support
+                </div>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-slate-300 transition-colors hover:text-white">Help</a></li>
+                    <li><a href="#" class="text-slate-300 transition-colors hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10">
+            <div class="mx-auto max-w-7xl px-6 py-5 text-center text-xs text-slate-400 md:px-10">© 2026 CampPN. All
+                rights
+                reserved.</div>
+        </div>
+    </footer>
+    <nav class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-4 border-t border-slate-200 bg-white pb-[env(safe-area-inset-bottom,0px)] shadow-[0_-4px_16px_rgba(31,41,55,0.06)] md:hidden"
+        aria-label="Main">
+        <a href="../index.html"
+            class="flex flex-col items-center gap-1 px-2 py-2 text-[0.66rem] font-semibold text-violet-700"
+            aria-current="page"><span class="material-symbols-outlined">home</span>Home</a>
+        <a href="/page/Explore-Event.html"
+            class="flex flex-col items-center gap-1 px-2 py-2 text-[0.66rem] font-semibold text-slate-400"><span
+                class="material-symbols-outlined">explore</span>Explore</a>
+        <a href="/page/My-Event.html"
+            class="flex flex-col items-center gap-1 px-2 py-2 text-[0.66rem] font-semibold text-slate-400"><span
+                class="material-symbols-outlined">confirmation_number</span>My Events</a>
+        <a href="/page/Notifications.html"
+            class="flex flex-col items-center gap-1 px-2 py-2 text-[0.66rem] font-semibold text-slate-400"><span
+                class="material-symbols-outlined">notifications</span>Alerts</a>
+    </nav>
+
+    <script type="module" src="./src/main.js"></script>
+
+    <script>
+        document.getElementById('chips').addEventListener('click', e => {
+            const chip = e.target.closest('.chip');
+            if (!chip) return;
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+            chip.classList.add('on');
+            const f = chip.dataset.filter;
+            document.querySelectorAll('[data-panel]').forEach(p => p.classList.toggle('active', p.dataset.panel === f));
+        });
+    </script>
+</body>
+
+</html>
