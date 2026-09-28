@@ -5,28 +5,31 @@
     'FILL' 0,
     'wght' 400,
     'GRAD' 0,
-    'opsz' 24
+    'opsz' 24;
 }
 
 .chip-input {
+  appearance: none;
+  -webkit-appearance: none;
   position: absolute;
+  width: 0;
+  height: 0;
   opacity: 0;
-  width: 1px;
-  height: 1px;
+  pointer-events: none;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 9999px;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 500;
   border: 1px solid #e2e8f0;
   color: #475569;
-  background: #fff;
+  background-color: #ffffff;
   cursor: pointer;
-  transition: background-color .15s, color .15s, border-color .15s;
+  transition: all 0.15s ease-in-out;
 }
 
 .chip:hover {
@@ -34,13 +37,13 @@
   color: #7c3aed;
 }
 
-.chip-input:checked+.chip {
-  background: #7c3aed;
+.chip-input:checked + .chip {
+  background-color: #7c3aed;
   border-color: #7c3aed;
-  color: #fff;
+  color: #ffffff;
 }
 
-.chip-input:focus-visible+.chip {
+.chip-input:focus-visible + .chip {
   outline: 2px solid #7c3aed;
   outline-offset: 2px;
 }
