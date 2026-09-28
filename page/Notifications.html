@@ -1327,7 +1327,7 @@
 
     </nav>
 
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="../src/main.js"></script>
     <script> const chips = document.getElementById('chips'); chips.addEventListener('click', (e) => { const chip = e.target.closest('[data-filter]'); if (!chip) return; document.querySelectorAll('[data-filter]').forEach(c => { c.classList.remove('active'); }); chip.classList.add('active'); const filter = chip.dataset.filter; document.querySelectorAll('[data-panel]').forEach(panel => { if (panel.dataset.panel === filter) { panel.classList.remove('hidden'); } else { panel.classList.add('hidden'); } }); }); </script>
 </body>
 
