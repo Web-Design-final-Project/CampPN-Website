@@ -9,475 +9,1326 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="stylesheet" href="../src/style.css" />
     <title>Notifications — CampPN</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../src/style.css" />
 </head>
 
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="bg-[#fafaff] font-['Roboto'] text-slate-800 antialiased">
 
-    <!-- ============ Navbar ============ -->
-    <header
-        class="navbar sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-sm transition-all duration-300">
-        <div class="navbar-content mx-auto flex max-w-7xl items-center justify-between gap-6">
-            <a href="../index.html"
-                class="inline-flex items-center gap-2 text-xl font-black tracking-[-0.02em] text-slate-800">
-                <img src="../src/assets/CampPN.png" alt="Logo" class="h-8 w-8">
-                Camp<span class="text-violet-700">PN</span>
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-5 px-4 py-3.5 sm:px-6 lg:px-8">
+
+            <!-- Logo -->
+            <a href="../index.html" class="group flex shrink-0 items-center gap-2.5">
+
+                <div class="relative">
+                    <img src="../src/assets/CampPN.png" alt="CampPN Logo"
+                        class="h-9 w-9 rounded-xl object-cover shadow-sm transition group-hover:scale-105">
+                </div>
+
+                <span class="font-['Poppins'] text-xl font-extrabold tracking-tight text-slate-900">
+                    Camp<span class="text-violet-600">PN</span>
+                </span>
+
             </a>
-            <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
+
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden items-center gap-1 rounded-xl bg-slate-50 p-1 md:flex" aria-label="Main navigation">
+
                 <a href="../index.html"
-                    class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Home</a>
-                <a href="./Explore-Event.html"
-                    class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Explore
-                    Events</a>
-                <a href="./My-Event.html"
-                    class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">My
-                    Events</a>
-                <a href="./Notifications.html"
-                    class="relative mx-3 py-2 text-sm font-medium text-violet-700">Notifications</a>
-            </nav>
-            <div class="flex items-center gap-2 sm:gap-3">
-                <button type="button"
-                    class="hidden h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 sm:inline-flex"
-                    aria-label="Search"><span class="material-symbols-outlined">search</span></button>
-                <a href="./Notifications.html"
-                    class="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet-200 bg-violet-50 text-violet-700"
-                    aria-label="Notifications, 3 unread">
-                    <span class="material-symbols-outlined">notifications</span>
-                    <span
-                        class="absolute right-1.5 top-1.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-violet-700"
-                        aria-hidden="true"></span>
+                    class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-white hover:text-violet-700">
+                    Home
                 </a>
-                <div class="inline-flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-white bg-violet-200 text-xs font-bold text-violet-700 shadow-[0_0_0_1.5px_rgba(148,163,184,0.35)]"
-                    aria-hidden="true">S</div>
+
+                <a href="./Explore-Event.html"
+                    class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-white hover:text-violet-700">
+                    Explore Events
+                </a>
+
+                <a href="./My-Event.html"
+                    class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-white hover:text-violet-700">
+                    My Events
+                </a>
+
+                <a href="./Notifications.html"
+                    class="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-violet-700 shadow-sm">
+                    Notifications
+                </a>
+
+            </nav>
+
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-2">
+
+                <!-- Search -->
+                <button type="button" aria-label="Search"
+                    class="hidden h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition hover:border-violet-200 hover:bg-violet-50 hover:text-violet-600 sm:flex">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+
+
+                <!-- Notifications -->
+                <a href="./Notifications.html" aria-label="Notifications"
+                    class="relative flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition hover:border-violet-200 hover:bg-violet-50 hover:text-violet-600">
+
+                    <span class="material-symbols-outlined">notifications</span>
+
+                    <span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-violet-600 ring-2 ring-white"></span>
+
+                </a>
+
+
+                <!-- Profile -->
+                <button type="button" aria-label="Profile"
+                    class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-violet-700 font-['Poppins'] text-sm font-bold text-white shadow-sm transition hover:scale-105">
+                    S
+                </button>
+
             </div>
+
         </div>
+
     </header>
 
+    <!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
 
-    <main class="wrap px-6 py-10">
-        <div class="flex items-start justify-between gap-4 flex-wrap mb-7">
+    <main class="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10 lg:px-10">
+
+        <!-- PAGE HEADER -->
+
+        <div class="mb-8 flex flex-wrap items-start justify-between gap-5">
+
             <div>
-                <h1 class="text-3xl font-bold tracking-tight">Notifications</h1>
-                <p class="text-[15px] mt-1.5">9 unread — mostly about the workshops you've
-                    registered for.</p>
-            </div>
-            <div class="flex gap-2">
-                <button class="pill-action">Mark all read</button>
-                <button class="pill-action">
-                    <span class="setting material-symbols-outlined">
-                    settings
+
+                <div class="mb-2 flex items-center gap-2">
+                    <span class="h-2 w-2 rounded-full bg-[#6d28d9] shadow-[0_0_0_5px_#f5f3ff]">
                     </span>
-                    Preferences
-                </button>
+
+                    <span class="text-xs font-semibold uppercase tracking-[.14em] text-[#8b5cf6]">
+                        Activity Center
+                    </span>
+                </div>
+
+                <h1 class="font-poppins text-3xl font-bold tracking-tight text-[#1f2937] md:text-4xl">
+                    Notifications
+                </h1>
+
+                <p class="mt-2 max-w-xl text-sm leading-6 text-slate-500 md:text-[15px]">
+                    Stay updated with your registered events, campus activities,
+                    and important account information.
+                </p>
+
             </div>
+
+            <div class="flex gap-2">
+
+                <button
+                    class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#6d28d9] shadow-sm transition hover:border-[#c4b5fd] hover:bg-[#f5f3ff]">
+
+                    Mark all read
+
+                </button>
+
+                <button
+                    class="flex items-center gap-1.5 rounded-xl bg-[#6d28d9] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_6px_18px_rgba(109,40,217,.18)] transition hover:bg-[#5b21b6] hover:shadow-purple">
+
+                    <span
+                        class="settings material-symbols-outlined text-[19px] transition duration-300 hover:rotate-90">
+                        settings
+                    </span>
+
+                    Preferences
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">
-            <div>
-                <div class="flex gap-2 overflow-x-auto pb-1 mb-2" id="chips">
-                    <button class="chip on" data-filter="all">All<span class="n">18</span></button>
-                    <button class="chip" data-filter="events">Events<span class="n">7</span></button>
-                    <button class="chip" data-filter="registration">Registration<span class="n">4</span></button>
-                    <button class="chip" data-filter="social">Social<span class="n">3</span></button>
-                    <button class="chip" data-filter="system">System<span class="n">4</span></button>
+
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
+
+
+            <!-- =================================================
+             LEFT
+        ================================================== -->
+
+            <div class="min-w-0">
+
+
+                <!-- FILTER -->
+
+                <div class="mb-5 flex gap-2 overflow-x-auto rounded-2xl border border-slate-200 bg-white p-2 shadow-card"
+                    id="chips">
+
+                    <button
+                        class="filter-chip active shrink-0 rounded-xl border border-transparent px-4 py-2 text-xs font-semibold"
+                        data-filter="all">
+
+                        All
+
+                        <span class="ml-1.5 rounded-full bg-white/20 px-1.5 py-0.5 text-[10px]">
+                            18
+                        </span>
+
+                    </button>
+
+                    <button
+                        class="filter-chip shrink-0 rounded-xl border border-transparent px-4 py-2 text-xs font-semibold text-slate-500"
+                        data-filter="events">
+
+                        Events
+
+                        <span class="ml-1.5 rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px]">
+                            7
+                        </span>
+
+                    </button>
+
+                    <button
+                        class="filter-chip shrink-0 rounded-xl border border-transparent px-4 py-2 text-xs font-semibold text-slate-500"
+                        data-filter="registration">
+
+                        Registration
+
+                        <span class="ml-1.5 rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px]">
+                            4
+                        </span>
+
+                    </button>
+
+                    <button
+                        class="filter-chip shrink-0 rounded-xl border border-transparent px-4 py-2 text-xs font-semibold text-slate-500"
+                        data-filter="social">
+
+                        Social
+
+                        <span class="ml-1.5 rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px]">
+                            3
+                        </span>
+
+                    </button>
+
+                    <button
+                        class="filter-chip shrink-0 rounded-xl border border-transparent px-4 py-2 text-xs font-semibold text-slate-500"
+                        data-filter="system">
+
+                        System
+
+                        <span class="ml-1.5 rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px]">
+                            4
+                        </span>
+
+                    </button>
+
                 </div>
+
+
                 <div id="panels">
+
+
+                    <!-- ================= TODAY ================= -->
+
                     <div data-panel="all" class="active">
-                        <div class="day-label">TODAY</div>
-                        <div class="notif unread" data-cat="events">
-                            <div class="ic white">
+
+                        <div class="day-label mb-3 px-1 text-[10px] font-bold text-[#8b5cf6]">
+                            TODAY
+                        </div>
+
+
+                        <!-- NOTIFICATION 1 -->
+
+                        <div
+                            class="notification-card unread relative mb-3 flex gap-4 rounded-2xl border border-[#c4b5fd]/50 p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#6d28d9] text-white shadow-[0_5px_15px_rgba(109,40,217,.2)]">
+
                                 <span class="material-symbols-outlined">
                                     alarm
                                 </span>
+
                             </div>
-                            <div class="flex-1">
-                                <div class="notif__title">Starting soon<span class="dot"></span></div>
-                                <p class="notif__text">UI/UX Design Workshop begins in 2 hours, Auditorium A.</p>
-                                <div class="notif__meta">10:00 AM · Events</div>
+
+                            <div class="min-w-0 flex-1">
+
+                                <div class="flex items-center gap-2">
+
+                                    <h3 class="font-poppins text-sm font-semibold text-[#1f2937]">
+                                        Starting soon
+                                    </h3>
+
+                                    <span class="h-2 w-2 rounded-full bg-[#6d28d9]"></span>
+
+                                </div>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    UI/UX Design Workshop begins in 2 hours, Auditorium A.
+                                </p>
+
+                                <div class="mt-2 flex items-center gap-2 text-xs font-medium text-slate-400">
+                                    <span>10:00 AM</span>
+                                    <span>•</span>
+                                    <span class="text-[#8b5cf6]">Events</span>
+                                </div>
+
                             </div>
+
                         </div>
-                        <div class="notif unread" data-cat="registration">
-                            <div class="ic white">
+
+
+                        <!-- NOTIFICATION 2 -->
+
+                        <div
+                            class="notification-card unread relative mb-3 flex gap-4 rounded-2xl border border-[#c4b5fd]/50 p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#8b5cf6] text-white">
+
                                 <span class="material-symbols-outlined">
                                     check
                                 </span>
+
                             </div>
-                            <div class="flex-1">
-                                <div class="notif__title">Registration confirmed<span class="dot"></span></div>
-                                <p class="notif__text">You're in for Career Workshop 2026. A calendar invite has been
-                                    sent to your inbox.</p>
-                                <div class="notif__meta">9:14 AM · Registration</div>
-                                <div class="row-actions"><button class="pill-action solid">Add to
-                                        calendar</button><button class="pill-action">View ticket</button></div>
+
+                            <div class="min-w-0 flex-1">
+
+                                <div class="flex items-center gap-2">
+
+                                    <h3 class="font-poppins text-sm font-semibold">
+                                        Registration confirmed
+                                    </h3>
+
+                                    <span class="h-2 w-2 rounded-full bg-[#6d28d9]"></span>
+
+                                </div>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    You're in for Career Workshop 2026.
+                                    A calendar invite has been sent to your inbox.
+                                </p>
+
+                                <div class="mt-2 text-xs font-medium text-slate-400">
+                                    9:14 AM · <span class="text-[#8b5cf6]">Registration</span>
+                                </div>
+
+                                <div class="mt-4 flex flex-wrap gap-2">
+
+                                    <button
+                                        class="rounded-lg bg-[#6d28d9] px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-[#5b21b6]">
+                                        Add to calendar
+                                    </button>
+
+                                    <button
+                                        class="rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-slate-600 transition hover:border-[#c4b5fd] hover:bg-[#f5f3ff] hover:text-[#6d28d9]">
+                                        View ticket
+                                    </button>
+
+                                </div>
+
                             </div>
+
                         </div>
-                        <div class="notif unread" data-cat="events">
-                            <div class="ic white">
+
+
+                        <!-- NOTIFICATION 3 -->
+
+                        <div
+                            class="notification-card unread relative mb-3 flex gap-4 rounded-2xl border border-[#c4b5fd]/50 p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     edit_calendar
                                 </span>
+
                             </div>
+
                             <div class="flex-1">
-                                <div class="notif__title">Time changed<span class="dot"></span></div>
-                                <p class="notif__text">UI/UX Design Workshop now starts at 3:00 PM, moved from 2:00 PM.
+
+                                <div class="flex items-center gap-2">
+
+                                    <h3 class="font-poppins text-sm font-semibold">
+                                        Time changed
+                                    </h3>
+
+                                    <span class="h-2 w-2 rounded-full bg-[#6d28d9]"></span>
+
+                                </div>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    UI/UX Design Workshop now starts at 3:00 PM,
+                                    moved from 2:00 PM.
                                 </p>
-                                <div class="notif__meta">8:02 AM · Events</div>
+
+                                <div class="mt-2 text-xs font-medium text-slate-400">
+                                    8:02 AM · <span class="text-[#8b5cf6]">Events</span>
+                                </div>
+
                             </div>
+
                         </div>
-                        <div class="notif unread" data-cat="social">
-                            <div class="ic white">
+
+
+                        <!-- NOTIFICATION 4 -->
+
+                        <div
+                            class="notification-card unread relative mb-3 flex gap-4 rounded-2xl border border-[#c4b5fd]/50 p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     group_add
                                 </span>
+
                             </div>
+
                             <div class="flex-1">
-                                <div class="notif__title">Friend joined an event<span class="dot"></span></div>
-                                <p class="notif__text">Maya Torres just registered for Career Workshop 2026 — you'll see
-                                    them there.</p>
-                                <div class="notif__meta">7:40 AM · Social</div>
+
+                                <div class="flex items-center gap-2">
+
+                                    <h3 class="font-poppins text-sm font-semibold">
+                                        Friend joined an event
+                                    </h3>
+
+                                    <span class="h-2 w-2 rounded-full bg-[#6d28d9]"></span>
+
+                                </div>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    Maya Torres just registered for Career Workshop 2026 —
+                                    you'll see them there.
+                                </p>
+
+                                <div class="mt-2 text-xs font-medium text-slate-400">
+                                    7:40 AM · <span class="text-[#8b5cf6]">Social</span>
+                                </div>
+
                             </div>
+
                         </div>
 
-                        <div class="notif unread" data-cat="registration">
-                            <div class="ic white">
+
+                        <!-- NOTIFICATION 5 -->
+
+                        <div
+                            class="notification-card unread relative mb-7 flex gap-4 rounded-2xl border border-[#c4b5fd]/50 p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     trending_up
                                 </span>
+
                             </div>
+
                             <div class="flex-1">
-                                <div class="notif__title">Waitlist moved up<span class="dot"></span></div>
-                                <p class="notif__text">A spot opened in Robotics Meetup — you're now #1 on the waitlist.
+
+                                <div class="flex items-center gap-2">
+
+                                    <h3 class="font-poppins text-sm font-semibold">
+                                        Waitlist moved up
+                                    </h3>
+
+                                    <span class="h-2 w-2 rounded-full bg-[#6d28d9]"></span>
+
+                                </div>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    A spot opened in Robotics Meetup —
+                                    you're now #1 on the waitlist.
                                 </p>
-                                <div class="notif__meta">6:55 AM · Registration</div>
+
+                                <div class="mt-2 text-xs font-medium text-slate-400">
+                                    6:55 AM · <span class="text-[#8b5cf6]">Registration</span>
+                                </div>
+
                             </div>
+
                         </div>
-                        <div class="day-label">YESTERDAY</div>
-                        <div class="notif" data-cat="events">
-                            <div class="ic red">
+
+
+                        <!-- ================= YESTERDAY ================= -->
+
+                        <div class="day-label mb-3 px-1 text-[10px] font-bold text-slate-400">
+                            YESTERDAY
+                        </div>
+
+
+                        <!-- Notification -->
+
+                        <div
+                            class="notification-card mb-3 flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-500">
+
                                 <span class="material-symbols-outlined">
                                     pin_drop
                                 </span>
+
                             </div>
+
                             <div class="flex-1">
-                                <div class="notif__title">Location changed</div>
-                                <p class="notif__text">Career Workshop 2026 has moved to Auditorium A.</p>
-                                <div class="notif__meta">4:47 PM · Events</div>
+
+                                <h3 class="font-poppins text-sm font-semibold">
+                                    Location changed
+                                </h3>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    Career Workshop 2026 has moved to Auditorium A.
+                                </p>
+
+                                <div class="mt-2 text-xs text-slate-400">
+                                    4:47 PM · Events
+                                </div>
+
                             </div>
+
                         </div>
 
-                        <div class="notif" data-cat="social">
-                            <div class="ic purple">
+
+                        <div
+                            class="notification-card mb-3 flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     workspace_premium
                                 </span>
+
                             </div>
+
                             <div class="flex-1">
-                                <div class="notif__title">Badge unlocked</div>
-                                <p class="notif__text">"Early Bird" — you registered for 5 events before doors opened.
+
+                                <h3 class="font-poppins text-sm font-semibold">
+                                    Badge unlocked
+                                </h3>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    "Early Bird" — you registered for 5 events before doors opened.
                                 </p>
-                                <div class="notif__meta">1:20 PM · Social</div>
+
+                                <div class="mt-2 text-xs text-slate-400">
+                                    1:20 PM · Social
+                                </div>
+
                             </div>
+
                         </div>
 
-                        <div class="notif" data-cat="system">
-                            <div class="ic purple">
+
+                        <div
+                            class="notification-card mb-7 flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     build
                                 </span>
+
                             </div>
+
                             <div class="flex-1">
-                                <div class="notif__title">Scheduled maintenance</div>
-                                <p class="notif__text">CampPN will be briefly unavailable Sunday, 2–3 AM, for updates.
+
+                                <h3 class="font-poppins text-sm font-semibold">
+                                    Scheduled maintenance
+                                </h3>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    CampPN will be briefly unavailable Sunday,
+                                    2–3 AM, for updates.
                                 </p>
-                                <div class="notif__meta">11:05 AM · System</div>
+
+                                <div class="mt-2 text-xs text-slate-400">
+                                    11:05 AM · System
+                                </div>
+
                             </div>
+
                         </div>
-                        <div class="day-label">OLDER</div>
-                        <div class="notif" data-cat="events">
-                            <div class="ic red">
+
+
+                        <!-- ================= OLDER ================= -->
+
+                        <div class="day-label mb-3 px-1 text-[10px] font-bold text-slate-400">
+                            OLDER
+                        </div>
+
+
+                        <div
+                            class="notification-card mb-3 flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-500">
+
                                 <span class="material-symbols-outlined">
                                     event_busy
                                 </span>
+
                             </div>
+
                             <div class="flex-1">
-                                <div class="notif__title">Event cancelled</div>
-                                <p class="notif__text">Campus Sports Day has been cancelled by the organizer.</p>
-                                <div class="notif__meta">Oct 3 · Events</div>
+
+                                <h3 class="font-poppins text-sm font-semibold">
+                                    Event cancelled
+                                </h3>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    Campus Sports Day has been cancelled by the organizer.
+                                </p>
+
+                                <div class="mt-2 text-xs text-slate-400">
+                                    Oct 3 · Events
+                                </div>
+
                             </div>
+
                         </div>
-                        <div class="notif" data-cat="system">
-                            <div class="ic purple">
+
+
+                        <div
+                            class="notification-card flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+
+                            <div
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     shield_person
                                 </span>
+
                             </div>
+
                             <div class="flex-1">
-                                <div class="notif__title">New sign-in detected</div>
-                                <p class="notif__text">Your account was accessed from a new device in Phnom Penh.</p>
-                                <div class="notif__meta">Oct 1 · System</div>
-                                <div class="row-actions"><button class="pill-action">This was me</button><button
-                                        class="pill-action">Secure account</button></div>
+
+                                <h3 class="font-poppins text-sm font-semibold">
+                                    New sign-in detected
+                                </h3>
+
+                                <p class="mt-1 text-sm leading-6 text-slate-600">
+                                    Your account was accessed from a new device in Phnom Penh.
+                                </p>
+
+                                <div class="mt-2 text-xs text-slate-400">
+                                    Oct 1 · System
+                                </div>
+
+                                <div class="mt-4 flex flex-wrap gap-2">
+
+                                    <button
+                                        class="rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-[#c4b5fd] hover:bg-[#f5f3ff] hover:text-[#6d28d9]">
+                                        This was me
+                                    </button>
+
+                                    <button
+                                        class="rounded-lg bg-[#6d28d9] px-3 py-2 text-xs font-semibold text-white transition hover:bg-[#5b21b6]">
+                                        Secure account
+                                    </button>
+
+                                </div>
+
                             </div>
+
                         </div>
+
                     </div>
-                    <div data-panel="events">
-                        <div class="empty">
-                            <div class="ic gray">
+
+
+                    <!-- FILTER PANELS -->
+
+                    <div data-panel="events" class="hidden">
+                        <div
+                            class="flex min-h-80 flex-col items-center justify-center rounded-2xl border border-dashed border-[#c4b5fd] bg-white p-8 text-center shadow-card">
+
+                            <div
+                                class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     tune
                                 </span>
+
                             </div>
-                            <h3 class="font-semibold text-[15px]">Filtered view</h3>
-                            <p class="text-sm mt-1 max-w-xs">Switch back to "All" to see every notification — this demo
-                                view keeps the category counts above in sync.</p>
+
+                            <h3 class="font-poppins text-sm font-semibold">
+                                Event notifications
+                            </h3>
+
+                            <p class="mt-1 max-w-xs text-sm leading-6 text-slate-500">
+                                Event reminders, schedule changes and cancellations
+                                will appear here.
+                            </p>
+
                         </div>
                     </div>
-                    <div data-panel="registration">
-                        <div class="empty">
-                            <div class="ic gray">
+
+
+                    <div data-panel="registration" class="hidden">
+                        <div
+                            class="flex min-h-80 flex-col items-center justify-center rounded-2xl border border-dashed border-[#c4b5fd] bg-white p-8 text-center shadow-card">
+
+                            <div
+                                class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     confirmation_number
                                 </span>
+
                             </div>
-                            <h3 class="font-semibold text-[15px]">Registration updates</h3>
-                            <p class="text-sm mt-1 max-w-xs">Confirmations, waitlists and ticket changes will appear
-                                here.</p>
+
+                            <h3 class="font-poppins text-sm font-semibold">
+                                Registration updates
+                            </h3>
+
+                            <p class="mt-1 max-w-xs text-sm leading-6 text-slate-500">
+                                Confirmations, waitlists and ticket changes
+                                will appear here.
+                            </p>
+
                         </div>
                     </div>
-                    <div data-panel="social">
-                        <div class="empty">
-                            <div class="ic gray">
+
+
+                    <div data-panel="social" class="hidden">
+                        <div
+                            class="flex min-h-80 flex-col items-center justify-center rounded-2xl border border-dashed border-[#c4b5fd] bg-white p-8 text-center shadow-card">
+
+                            <div
+                                class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     chat_bubble
                                 </span>
+
                             </div>
-                            <h3 class="font-semibold text-[15px]">Social activity</h3>
-                            <p class="text-sm mt-1 max-w-xs">Friends joining events and badges you earn show up here.
+
+                            <h3 class="font-poppins text-sm font-semibold">
+                                Social activity
+                            </h3>
+
+                            <p class="mt-1 max-w-xs text-sm leading-6 text-slate-500">
+                                Friends joining events and badges you earn
+                                show up here.
                             </p>
+
                         </div>
                     </div>
-                    <div data-panel="system">
-                        <div class="empty">
-                            <div class="ic gray">
+
+
+                    <div data-panel="system" class="hidden">
+                        <div
+                            class="flex min-h-80 flex-col items-center justify-center rounded-2xl border border-dashed border-[#c4b5fd] bg-white p-8 text-center shadow-card">
+
+                            <div
+                                class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f5f3ff] text-[#6d28d9]">
+
                                 <span class="material-symbols-outlined">
                                     settings_suggest
                                 </span>
+
                             </div>
-                            <h3 class="font-semibold text-[15px]">System</h3>
-                            <p class="text-sm mt-1 max-w-xs">Account and platform updates will show up here.</p>
+
+                            <h3 class="font-poppins text-sm font-semibold">
+                                System
+                            </h3>
+
+                            <p class="mt-1 max-w-xs text-sm leading-6 text-slate-500">
+                                Account and platform updates will show up here.
+                            </p>
+
                         </div>
                     </div>
+
                 </div>
+
             </div>
+
+
+            <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
             <aside class="flex flex-col gap-5">
-                <div class="card">
-                    <h3 class="font-semibold text-[15px] mb-3">This week</h3>
-                    <div class="space-y-3">
+
+
+                <!-- THIS WEEK -->
+
+                <div class="sidebar-card rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+
+                    <div class="mb-5 flex items-center justify-between">
+
                         <div>
-                            <div class="flex justify-between text-[13px] mb-1" ><span>Events</span><span>7</span></div>
-                            <div class="stat-track">
-                                <div class="stat-fill" style="width:70%; background: #5B21B6;"></div>
-                            </div>
+                            <h3 class="font-poppins text-sm font-semibold">
+                                This week
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-400">
+                                Notification activity
+                            </p>
                         </div>
-                        <div>
-                            <div class="flex justify-between text-[13px] mb-1"><span>Registration</span><span>4</span>
-                            </div>
-                            <div class="stat-track">
-                                <div class="stat-fill" style="width:40%; background:var(--green);"></div>
-                            </div>
+
+                        <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
+                            <span class="material-symbols-outlined text-[20px]">
+                                analytics
+                            </span>
+
                         </div>
-                        <div>
-                            <div class="flex justify-between text-[13px] mb-1 "><span>Social</span><span>3</span></div>
-                            <div class="stat-track ">
-                                <div class="stat-fill" style="width:30%; background: #a1ecd4;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-[13px] mb-1"><span>System</span><span>4</span></div>
-                            <div class="stat-track">
-                                <div class="stat-fill" style="width:40%; background:#9C97AC;"></div>
-                            </div>
-                        </div>
+
                     </div>
-                </div>
 
-                <div class="card">
-                    <h3 class="font-semibold text-[15px] mb-3">Delivery preferences</h3>
-                    <div class="space-y-3.5">
-                        <div class="flex items-center justify-between"><span class="text-[13.5px]">Push
-                                notifications</span>
-                            <div class="toggle on" onclick="this.classList.toggle('on')"></div>
-                        </div>
-                        <div class="flex items-center justify-between"><span class="text-[13.5px]">Email digest</span>
-                            <div class="toggle on" onclick="this.classList.toggle('on')"></div>
-                        </div>
-                        <div class="flex items-center justify-between"><span class="text-[13.5px]">SMS reminders</span>
-                            <div class="toggle" onclick="this.classList.toggle('on')"></div>
-                        </div>
-                        <div class="flex items-center justify-between"><span class="text-[13.5px]">Friend
-                                activity</span>
-                            <div class="toggle on" onclick="this.classList.toggle('on')"></div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="card-e" style="background:var(--violet-950); border-color:var(--violet-950); color:#fff;">
-                    <h3 class="font-semibold text-[15px] mb-1.5">Upcoming today</h3>
-                    <p class="text-[13.5px]" style="color:#D8CEF3;">UI/UX Design Workshop, 3:00 PM, Auditorium A.</p>
-                    <button class="pill-action mt-3">View event</button>
-                </div>
+                    <div class="space-y-4">
 
-                <div class="card">
-                    <h3 class="font-semibold text-[15px] mb-3">Suggested for you</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 box-event px-2">
-                            <div class="ic lightgrey" style="width:34px;height:34px;font-size:.9rem;">
-                                <span class="material-symbols-outlined">
-                                  podium
+                        <div>
+
+                            <div class="mb-1.5 flex justify-between text-xs">
+
+                                <span class="font-medium text-slate-600">
+                                    Events
                                 </span>
+
+                                <span class="font-semibold text-[#6d28d9]">
+                                    7
+                                </span>
+
                             </div>
-                            <div class="flex-1">
-                                <div class="text-[13.5px] font-medium leading-tight">Public Speaking 101</div>
-                                <div class="text-[12px]" style="color:var(--ink-soft)">Sat · 12 friends going</div>
+
+                            <div class="progress-track">
+                                <div class="progress-fill bg-[#6d28d9]" style="width:70%">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="mb-1.5 flex justify-between text-xs">
+
+                                <span class="font-medium text-slate-600">
+                                    Registration
+                                </span>
+
+                                <span class="font-semibold text-[#8b5cf6]">
+                                    4
+                                </span>
+
+                            </div>
+
+                            <div class="progress-track">
+                                <div class="progress-fill bg-[#8b5cf6]" style="width:40%">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="mb-1.5 flex justify-between text-xs">
+
+                                <span class="font-medium text-slate-600">
+                                    Social
+                                </span>
+
+                                <span class="font-semibold text-[#6d28d9]">
+                                    3
+                                </span>
+
+                            </div>
+
+                            <div class="progress-track">
+                                <div class="progress-fill bg-[#c4b5fd]" style="width:30%">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="mb-1.5 flex justify-between text-xs">
+
+                                <span class="font-medium text-slate-600">
+                                    System
+                                </span>
+
+                                <span class="font-semibold text-slate-600">
+                                    4
+                                </span>
+
+                            </div>
+
+                            <div class="progress-track">
+                                <div class="progress-fill bg-[#1f2937]" style="width:40%">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DELIVERY -->
+
+                <div class="sidebar-card rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+
+                    <div class="mb-5">
+
+                        <h3 class="font-poppins text-sm font-semibold">
+                            Delivery preferences
+                        </h3>
+
+                        <p class="mt-1 text-xs text-slate-400">
+                            Choose how CampPN keeps you updated.
+                        </p>
+
+                    </div>
+
+                    <div class="space-y-4">
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-[13px] text-slate-600">
+                                Push notifications
+                            </span>
+
+                            <div class="premium-toggle on" onclick="this.classList.toggle('on')">
                             </div>
                         </div>
-                        <div class="flex items-center gap-3 box-event px-2">
-                            <div class="ic lightgrey" style="width:34px;height:34px;font-size:.9rem;">
-                                <span class="material-symbols-outlined">
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-[13px] text-slate-600">
+                                Email digest
+                            </span>
+
+                            <div class="premium-toggle on" onclick="this.classList.toggle('on')">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-[13px] text-slate-600">
+                                SMS reminders
+                            </span>
+
+                            <div class="premium-toggle" onclick="this.classList.toggle('on')">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-[13px] text-slate-600">
+                                Friend activity
+                            </span>
+
+                            <div class="premium-toggle on" onclick="this.classList.toggle('on')">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UPCOMING -->
+
+                <div
+                    class="sidebar-card overflow-hidden rounded-2xl border border-[#c4b5fd] bg-gradient-to-br from-[#f5f3ff] to-white p-5 shadow-purple">
+
+                    <div class="mb-3 flex items-center gap-2">
+
+                        <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#6d28d9] text-white">
+
+                            <span class="material-symbols-outlined text-[19px]">
+                                event
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="font-poppins text-sm font-bold text-[#6d28d9]">
+                                Upcoming today
+                            </h3>
+
+                            <p class="text-[10px] font-medium uppercase tracking-wider text-[#8b5cf6]">
+                                Don't miss it
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-[13px] leading-6 text-[#1f2937]">
+                        UI/UX Design Workshop,
+                        <strong>3:00 PM</strong>,
+                        Auditorium A.
+                    </p>
+
+                    <button
+                        class="mt-4 w-full rounded-xl border border-[#6d28d9] bg-white px-4 py-2.5 text-xs font-semibold text-[#6d28d9] transition hover:bg-[#6d28d9] hover:text-white">
+
+                        View event
+
+                    </button>
+
+                </div>
+
+
+                <!-- SUGGESTED -->
+
+                <div class="sidebar-card rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+
+                    <div class="mb-4">
+
+                        <h3 class="font-poppins text-sm font-semibold">
+                            Suggested for you
+                        </h3>
+
+                        <p class="mt-1 text-xs text-slate-400">
+                            Events you may enjoy
+                        </p>
+
+                    </div>
+
+
+                    <div class="space-y-2">
+
+
+                        <div class="suggested-event flex items-center gap-3 rounded-xl border border-transparent p-2.5">
+
+                            <div
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
+                                <span class="material-symbols-outlined text-[20px]">
+                                    podium
+                                </span>
+
+                            </div>
+
+                            <div class="min-w-0 flex-1">
+
+                                <div class="truncate text-[13px] font-semibold">
+                                    Public Speaking 101
+                                </div>
+
+                                <div class="mt-0.5 text-[11px] text-slate-400">
+                                    Sat · 12 friends going
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="suggested-event flex items-center gap-3 rounded-xl border border-transparent p-2.5">
+
+                            <div
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
+                                <span class="material-symbols-outlined text-[20px]">
                                     sports_esports
                                 </span>
+
                             </div>
-                            <div class="flex-1">
-                                <div class="text-[13.5px] font-medium leading-tight">Game Jam Kickoff</div>
-                                <div class="text-[12px]" style="color:var(--ink-soft)">Next Tue · New</div>
+
+                            <div class="min-w-0 flex-1">
+
+                                <div class="truncate text-[13px] font-semibold">
+                                    Game Jam Kickoff
+                                </div>
+
+                                <div class="mt-0.5 text-[11px] text-slate-400">
+                                    Next Tue · New
+                                </div>
+
                             </div>
+
                         </div>
-                        <div class="flex items-center gap-3 box-event px-2">
-                            <div class="ic lightgrey" style="width:34px;height:34px;font-size:.9rem;">
-                                <span class="material-symbols-outlined">
-                                   local_cafe
+
+
+                        <div class="suggested-event flex items-center gap-3 rounded-xl border border-transparent p-2.5">
+
+                            <div
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]">
+
+                                <span class="material-symbols-outlined text-[20px]">
+                                    local_cafe
                                 </span>
+
                             </div>
-                            <div class="flex-1">
-                                <div class="text-[13.5px] font-medium leading-tight">Coffee & Career Chat</div>
-                                <div class="text-[12px]" style="color:var(--ink-soft)">Oct 12 · 6 spots left</div>
+
+                            <div class="min-w-0 flex-1">
+
+                                <div class="truncate text-[13px] font-semibold">
+                                    Coffee & Career Chat
+                                </div>
+
+                                <div class="mt-0.5 text-[11px] text-slate-400">
+                                    Oct 12 · 6 spots left
+                                </div>
+
                             </div>
+
                         </div>
+
                     </div>
-                    <button class="pill-action mt-4 w-full">Browse all events</button>
+
+
+                    <button
+                        class="mt-4 w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-semibold text-[#6d28d9] transition hover:border-[#6d28d9] hover:bg-[#f5f3ff]">
+
+                        Browse all events
+
+                    </button>
+
                 </div>
 
-                <div class="card">
-                    <h3 class="font-semibold text-[15px] mb-3">Need help?</h3>
-                    <div class="space-y-2 text-[13.5px]">
-                        <a href="#" class="flex items-center justify-between py-1.5"
-                            style="color:var(--ink)">Notification settings <span
-                                style="color:var(--ink-soft)">
-                                <span class="material-symbols-outlined">
-                                    chevron_right
-                                </span>
-                            </span>
-                        </a>
-                        <a href="#" class="flex items-center justify-between py-1.5" style="color:var(--ink)">Report a
-                            problem <span style="color:var(--ink-soft)">
-                                <span class="material-symbols-outlined">
-                                    chevron_right
-                                </span>
-                            </span>
-                        </a>
-                        <a href="#" class="flex items-center justify-between py-1.5" style="color:var(--ink)">Contact
-                            support <span style="color:var(--ink-soft)">
-                                <span class="material-symbols-outlined">
-                                    chevron_right
-                                </span>
-                            </span>
-                        </a>
+
+                <!-- HELP -->
+
+                <div class="sidebar-card rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+
+                    <div class="mb-4">
+
+                        <h3 class="font-poppins text-sm font-semibold">
+                            Need help?
+                        </h3>
+
+                        <p class="mt-1 text-xs text-slate-400">
+                            Manage your notification experience.
+                        </p>
+
                     </div>
+
+                    <div class="space-y-1">
+
+                        <a href="#"
+                            class="flex items-center justify-between rounded-lg px-2.5 py-2.5 text-[13px] text-slate-600 transition hover:bg-[#f5f3ff] hover:text-[#6d28d9]">
+
+                            Notification settings
+
+                            <span class="material-symbols-outlined text-[18px] text-slate-400">
+                                chevron_right
+                            </span>
+
+                        </a>
+
+                        <a href="#"
+                            class="flex items-center justify-between rounded-lg px-2.5 py-2.5 text-[13px] text-slate-600 transition hover:bg-[#f5f3ff] hover:text-[#6d28d9]">
+
+                            Report a problem
+
+                            <span class="material-symbols-outlined text-[18px] text-slate-400">
+                                chevron_right
+                            </span>
+
+                        </a>
+
+                        <a href="#"
+                            class="flex items-center justify-between rounded-lg px-2.5 py-2.5 text-[13px] text-slate-600 transition hover:bg-[#f5f3ff] hover:text-[#6d28d9]">
+
+                            Contact support
+
+                            <span class="material-symbols-outlined text-[18px] text-slate-400">
+                                chevron_right
+                            </span>
+
+                        </a>
+
+                    </div>
+
                 </div>
+
             </aside>
+
         </div>
+
     </main>
-    <footer class="bg-slate-800 text-slate-300">
+    <!-- ======= Footer ======== -->
+    <footer class="hidden bg-slate-900 text-slate-300 md:block">
+
         <div class="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:grid-cols-2 md:px-10 lg:grid-cols-4">
-            <div class="lg:col-span-1">
-                <a href="index.html"
-                    class="inline-flex items-center gap-2 text-xl font-black tracking-[-0.02em] text-white">
-                    <img src="../src/assets/CampPN.png" alt="Logo" class="h-8 w-8 rounded-full object-cover">
-                    Camp<span class="text-violet-300">PN</span>
+
+            <!-- Brand -->
+            <div>
+
+                <a href="../index.html" class="flex items-center gap-2 text-xl font-black text-white">
+
+                    <img src="../src/assets/CampPN.png" alt="CampPN Logo" class="h-8 w-8 rounded-xl object-cover">
+
+                    Camp<span class="text-violet-400">PN</span>
+
                 </a>
-                <p class="mt-3 max-w-[28ch] text-sm text-slate-400">Everything happening on campus, in one place.</p>
-                <div class="mt-4 flex gap-2">
-                    <a href="#"
-                        class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
-                        aria-label="CampPN on Facebook"><span class="material-symbols-outlined">thumb_up</span></a>
-                    <a href="#"
-                        class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
-                        aria-label="CampPN on Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
-                    <a href="#"
-                        class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
-                        aria-label="CampPN on Telegram"><span class="material-symbols-outlined">send</span></a>
-                </div>
+
+                <p class="mt-3 max-w-xs text-sm leading-6 text-slate-400">
+                    Everything happening on campus, in one place.
+                </p>
+
             </div>
 
+
+            <!-- Platform -->
             <div>
-                <div class="mb-3 text-sm font-semibold text-white" style="font-family:'Poppins',sans-serif;">Platform
-                </div>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="../index.html" class="text-slate-300 transition-colors hover:text-white">About</a></li>
-                    <li><a href="/page/Explore-Event.html"
-                            class="text-slate-300 transition-colors hover:text-white">Explore Events</a>
+
+                <h3 class="font-['Poppins'] text-sm font-semibold text-white">
+                    Platform
+                </h3>
+
+                <ul class="mt-4 space-y-3 text-sm">
+
+                    <li>
+                        <a href="../index.html" class="transition hover:text-white">
+                            Home
+                        </a>
                     </li>
-                    <li><a href="/page/My-Event.html" class="text-slate-300 transition-colors hover:text-white">My
-                            Events</a></li>
+
+                    <li>
+                        <a href="./Explore-Event.html" class="transition hover:text-white">
+                            Explore Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./My-Event.html" class="transition hover:text-white">
+                            My Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./Notifications.html" class="transition hover:text-white">
+                            My Events
+                        </a>
+                    </li>
+
                 </ul>
+
             </div>
 
+
+            <!-- Support -->
             <div>
-                <div class="mb-3 text-sm font-semibold text-white" style="font-family:'Poppins',sans-serif;">Support
-                </div>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="text-slate-300 transition-colors hover:text-white">Help</a></li>
-                    <li><a href="#" class="text-slate-300 transition-colors hover:text-white">Contact</a></li>
+
+                <h3 class="font-['Poppins'] text-sm font-semibold text-white">
+                    Support
+                </h3>
+
+                <ul class="mt-4 space-y-3 text-sm">
+
+                    <li>
+                        <a href="#" class="transition hover:text-white">
+                            Help Center
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="transition hover:text-white">
+                            Contact Us
+                        </a>
+                    </li>
+
                 </ul>
+
             </div>
+
+
+            <!-- Description -->
+            <div>
+
+                <h3 class="font-['Poppins'] text-sm font-semibold text-white">
+                    CampPN
+                </h3>
+
+                <p class="mt-4 text-sm leading-6 text-slate-400">
+                    Discover opportunities, connect with communities,
+                    and never miss what's happening on campus.
+                </p>
+
+            </div>
+
         </div>
+
 
         <div class="border-t border-white/10">
-            <div class="mx-auto max-w-7xl px-6 py-5 text-center text-xs text-slate-400 md:px-10">© 2026 CampPN. All
-                rights
-                reserved.</div>
+
+            <div class="mx-auto max-w-7xl px-6 py-5 text-center text-xs text-slate-500 md:px-10">
+                © 2026 CampPN. All rights reserved.
+            </div>
+
         </div>
+
     </footer>
-    <nav class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-4 border-t border-slate-200 bg-white pb-[env(safe-area-inset-bottom,0px)] shadow-[0_-4px_16px_rgba(31,41,55,0.06)] md:hidden"
-        aria-label="Main">
+
+
+
+    <!-- =====================================================
+       MOBILE BOTTOM NAVIGATION
+  ====================================================== -->
+    <nav class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-4 border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom,0px)] shadow-[0_-5px_20px_rgba(15,23,42,0.08)] backdrop-blur-md md:hidden"
+        aria-label="Mobile navigation">
+
         <a href="../index.html"
-            class="flex flex-col items-center gap-1 px-2 py-2 text-[0.66rem] font-semibold text-violet-700"
-            aria-current="page"><span class="material-symbols-outlined">home</span>Home</a>
-        <a href="/page/Explore-Event.html"
-            class="flex flex-col items-center gap-1 px-2 py-2 text-[0.66rem] font-semibold text-slate-400"><span
-                class="material-symbols-outlined">explore</span>Explore</a>
-        <a href="/page/My-Event.html"
-            class="flex flex-col items-center gap-1 px-2 py-2 text-[0.66rem] font-semibold text-slate-400"><span
-                class="material-symbols-outlined">confirmation_number</span>My Events</a>
-        <a href="/page/Notifications.html"
-            class="flex flex-col items-center gap-1 px-2 py-2 text-[0.66rem] font-semibold text-slate-400"><span
-                class="material-symbols-outlined">notifications</span>Alerts</a>
+            class="flex flex-col items-center gap-1 px-2 py-3 text-[10px] font-semibold text-slate-400 transition hover:text-violet-600">
+
+            <span class="material-symbols-outlined text-[22px]">
+                home
+            </span>
+
+            Home
+
+        </a>
+
+
+        <a href="./Explore-Event.html"
+            class="flex flex-col items-center gap-1 px-2 py-3 text-[10px] font-semibold text-slate-400 transition hover:text-violet-600">
+
+            <span class="material-symbols-outlined text-[22px]">
+                explore
+            </span>
+
+            Explore
+
+        </a>
+
+
+        <a href="./My-Event.html"
+            class="flex flex-col items-center gap-1 px-2 py-3 text-[10px] font-semibold text-slate-400 transition hover:text-violet-600">
+
+            <span class="material-symbols-outlined text-[22px]">
+                confirmation_number
+            </span>
+
+            My Events
+
+        </a>
+
+
+        <a href="./Notifications.html" aria-current="page"
+            class="flex flex-col items-center gap-1 px-2 py-3 text-[10px] font-semibold text-violet-700">
+
+            <span class="material-symbols-outlined text-[22px]">
+                notifications
+            </span>
+
+            Alerts
+
+        </a>
+
     </nav>
 
     <script type="module" src="./src/main.js"></script>
-
-    <script>
-        document.getElementById('chips').addEventListener('click', e => {
-            const chip = e.target.closest('.chip');
-            if (!chip) return;
-            document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
-            chip.classList.add('on');
-            const f = chip.dataset.filter;
-            document.querySelectorAll('[data-panel]').forEach(p => p.classList.toggle('active', p.dataset.panel === f));
-        });
-    </script>
+    <script> const chips = document.getElementById('chips'); chips.addEventListener('click', (e) => { const chip = e.target.closest('[data-filter]'); if (!chip) return; document.querySelectorAll('[data-filter]').forEach(c => { c.classList.remove('active'); }); chip.classList.add('active'); const filter = chip.dataset.filter; document.querySelectorAll('[data-panel]').forEach(panel => { if (panel.dataset.panel === filter) { panel.classList.remove('hidden'); } else { panel.classList.add('hidden'); } }); }); </script>
 </body>
 
 </html>
