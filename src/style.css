@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
 
+.navbar-content {
+  padding: 1rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-content {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+}
 
 .material-symbols-outlined {
   font-variation-settings:

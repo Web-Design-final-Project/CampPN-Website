@@ -16,75 +16,43 @@
 
 <body class="bg-white text-slate-800 antialiased">
 
-  <!-- ============ Navbar ============ -->
-  <header
-    class="navbar sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-sm transition-all duration-300">
-    <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:px-10">
-      <a href="../index.html"
-        class="inline-flex items-center gap-2 text-xl font-black tracking-[-0.02em] text-slate-800">
-        <img src="../src/assets/CampPN.png" alt="Logo" class="h-8 w-8">
-        Camp<span class="text-violet-700">PN</span>
-      </a>
-      <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
-        <a href="../index.html"
-          class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Home</a>
-        <a href="./Explore-Event.html" class="relative mx-3 py-2 text-sm font-medium text-violet-700">Explore
-          Events</a>
-        <a href="./My-Event.html"
-          class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">My
-          Events</a>
-        <a href="./Notifications.html"
-          class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Notifications</a>
-      </nav>
-      <div class="flex items-center gap-2 sm:gap-3">
-        <button type="button"
-          class="hidden h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 sm:inline-flex"
-          aria-label="Search">
-          <span class="material-symbols-outlined">search</span>
-        </button>
-        <a href="./Notifications.html"
-          class="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700"
-          aria-label="Notifications, 3 unread">
-          <span class="material-symbols-outlined">notifications</span>
-          <span class="absolute right-1.5 top-1.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-violet-700"
-            aria-hidden="true"></span>
-        </a>
-        <div
-          class="inline-flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-white bg-violet-200 text-xs font-bold text-violet-700 shadow-[0_0_0_1.5px_rgba(148,163,184,0.35)]"
-          aria-hidden="true">S</div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Explore Events -->
-  <main class="mx-auto px-6 md:px-10 py-10">
-    <h1 class="text-3xl font-extrabold text-slate-900">Explore Events</h1>
-    <p class="text-slate-500 mt-2 max-w-2xl">Find Workshops, competitions, seminars, club activities, and more happening
-      around campus.</p>
-
-    <div class="relative max-w-2xl flex mt-6">
-      <span
-        class="material-symbols-outlined text-violet-700 bg-violet-50 rounded-tl-md rounded-bl-md px-3 py-3">search</span>
-      <input type="search"
-        class="w-full border border-violet-200 rounded-tr-md rounded-br-md bg-white px-11 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-violet-700 focus:outline-none"
-        placeholder="Search events, clubs, topics..." aria-label="Search events, clubs, topics" />
-    </div>
-
-    <div class="mt-8 flex flex-col lg:flex-row gap-8">
-      <aside class="w-full lg:w-64 shrink-0 space-y-8 h-screen overflow-y-auto sticky top-24 bg-violet-50 p-6 rounded-xl">
-        <div>
-          <h3 class="font-semibold text-slate-800 mb-3">Category</h3>
-          <select class="w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-700 focus:border-violet-500 focus:outline-none">
-            <option selected>All</option>
-            <option>Workshop</option>
-            <option>Seminar</option>
-            <option>Competition</option>
-            <option>Sports</option>
-            <option>Career</option>
-            <option>Technology</option>
-            <option>Club Activity</option>
-            <option>Social</option>
-          </select>
+    <!-- ============ Navbar ============ -->
+    <header
+        class="navbar sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-sm transition-all duration-300">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:px-10">
+            <a href="../index.html"
+                class="inline-flex items-center gap-2 text-xl font-black tracking-[-0.02em] text-slate-800">
+                <img src="../src/assets/CampPN.png" alt="Logo" class="h-8 w-8">
+                Camp<span class="text-violet-700">PN</span>
+            </a>
+            <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
+                <a href="../index.html"
+                    class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Home</a>
+                <a href="./Explore-Event.html" class="relative mx-3 py-2 text-sm font-medium text-violet-700">Explore
+                    Events</a>
+                <a href="./My-Event.html"
+                    class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">My
+                    Events</a>
+                <a href="./Notifications.html"
+                    class="relative mx-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">Notifications</a>
+            </nav>
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button type="button"
+                    class="hidden h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 sm:inline-flex"
+                    aria-label="Search">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <a href="./Notifications.html"
+                    class="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700"
+                    aria-label="Notifications, 3 unread">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span
+                        class="absolute right-1.5 top-1.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-violet-700"
+                        aria-hidden="true"></span>
+                </a>
+                <div class="inline-flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-white bg-violet-200 text-xs font-bold text-violet-700 shadow-[0_0_0_1.5px_rgba(148,163,184,0.35)]"
+                    aria-hidden="true">S</div>
+            </div>
         </div>
 <<<<<<< HEAD
     </header>
