@@ -8,7 +8,6 @@
     'opsz' 24
 }
 
-<<<<<<< HEAD
 :root {
   --violet-950: #1E1147;
   --violet-800: #3D1F8C;
@@ -315,10 +314,10 @@ header.top {
   font-size: 28px;
 }
 .ic.lightgrey{
-  background-color: rgba(211, 211, 211, 0.395);
+  background-color: rgba(211, 211, 211, 0.79);
 }
 .ic.lightgrey .material-symbols-outlined {
-  color: green;
+  color: black;
   font-size: 28px;
 }
 .chevron {
@@ -477,7 +476,6 @@ header.top {
 
 [data-panel].active {
   display: block;
-=======
 .chip-input {
   position: absolute;
   opacity: 0;
@@ -513,5 +511,4 @@ header.top {
 .chip-input:focus-visible+.chip {
   outline: 2px solid #7c3aed;
   outline-offset: 2px;
->>>>>>> 1509076f2037075f567ef4ce243344128f0d6bbd
 }
