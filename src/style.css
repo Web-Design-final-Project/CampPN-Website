@@ -39,12 +39,12 @@ header.top {
   backdrop-filter: blur(8px);
 }
 
-nav a {
+.hidden a {
     position: relative;
     padding: 5px;
 }
 
-nav a::after {
+.hidden a::after {
     position: absolute;
     content: " ";
     width: 100%;
@@ -57,7 +57,7 @@ nav a::after {
     transition: transform 0.3s ease-out;
 }
 
-nav a:hover::after {
+.hidden a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
