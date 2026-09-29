@@ -152,8 +152,13 @@ button,
 
 }
 
+.category-card {
+    transition: transform 0.3s ease;
+}
+
 .category-card:hover {
     transform: translateY(-4px);
+    cursor: pointer;
 }
 
 .favorite-button:hover .favorite-icon {
