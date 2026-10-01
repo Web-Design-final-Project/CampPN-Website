@@ -4,7 +4,7 @@ import { resolve } from 'node:path'
 
 export default defineConfig({
   plugins: [tailwindcss()],
-  base: '/campPN-Website/', // GitHub Pages: '/Event-Campus-Website/'
+  base: '/Event-Campus-Website/', // GitHub Pages: '/Event-Campus-Website/'
   build: {
     rollupOptions: {
       input: {
