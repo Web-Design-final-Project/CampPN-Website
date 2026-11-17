@@ -58,6 +58,11 @@
                     My Events
                 </a>
 
+        <a href="./Favorites.html"
+          class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-white hover:text-violet-700">
+          Favorites
+        </a>
+
                 <a href="./Notifications.html"
                     class="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-violet-700 shadow-sm">
                     Notifications
@@ -275,6 +280,8 @@
                             Access your events, registrations, and personalized opportunities.
                         </p>
 
+                    <p id="formNote" hidden class="mt-4 flex items-start gap-2 rounded-xl border border-violet-200 bg-[#f5f3ff] px-4 py-3 text-sm text-[#5b21b6]"></p>
+
                     </div>
 
 
@@ -283,8 +290,8 @@
                SOCIAL LOGIN
           ================================================== -->
 
-                    <button type="button"
-                        class="mt-7 flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-[#1f2937] transition hover:border-[#c4b5fd] hover:bg-[#f5f3ff]">
+                    <button type="button" disabled aria-disabled="true" title="Google sign-in is coming soon"
+                        class="mt-7 flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-5 py-3.5 text-sm font-semibold text-slate-400 opacity-70">
 
                         <span class="font-['Poppins'] font-bold text-[#6d28d9]">
                             <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Search_logo.width-500.format-webp.webp"
@@ -292,7 +299,7 @@
 
                         </span>
 
-                        Continue with Google
+                        Continue with Google <span class="rounded-full bg-slate-200 px-2 py-0.5 text-[10px] font-bold text-slate-500">Soon</span>
 
                     </button>
 
@@ -316,7 +323,7 @@
                FORM
           ================================================== -->
 
-                    <form onsubmit="handleSubmit(event)">
+                    <form id="authForm" novalidate>
 
 
                         <!-- Full Name -->
@@ -391,7 +398,7 @@
                                     class="w-full rounded-xl border border-slate-200 bg-white py-3.5 pl-11 pr-12 text-sm outline-none transition placeholder:text-slate-400 focus:border-[#8b5cf6] focus:ring-4 focus:ring-[#c4b5fd]/25" />
 
 
-                                <button type="button" onclick="togglePassword('password','passwordIcon')"
+                                <button type="button" data-toggle-password="password" data-icon="passwordIcon" aria-label="Show password"
                                     class="absolute inset-y-0 right-3.5 flex items-center text-slate-400 transition hover:text-[#6d28d9]">
 
                                     <span id="passwordIcon" class="material-symbols-outlined text-[20px] leading-none">
@@ -422,7 +429,7 @@
                                 <input id="confirmPassword" type="password" placeholder="Confirm your password"
                                     class="w-full rounded-xl border border-slate-200 bg-white py-3.5 pl-11 pr-12 text-sm outline-none transition placeholder:text-slate-400 focus:border-[#8b5cf6] focus:ring-4 focus:ring-[#c4b5fd]/25" />
 
-                                <button type="button" onclick="togglePassword('confirmPassword','confirmPasswordIcon')"
+                                <button type="button" data-toggle-password="confirmPassword" data-icon="confirmPasswordIcon" aria-label="Show password"
                                     class="absolute inset-y-0 right-3.5 flex items-center text-slate-400 transition hover:text-[#6d28d9]">
 
                                     <span id="confirmPasswordIcon"
@@ -442,7 +449,7 @@
 
                             <label class="flex cursor-pointer items-start gap-3">
 
-                                <input type="checkbox" class="mt-1 h-4 w-4 rounded border-slate-300 accent-[#6d28d9]" />
+                                <input id="terms" type="checkbox" class="mt-1 h-4 w-4 rounded border-slate-300 accent-[#6d28d9]" />
 
                                 <span class="text-xs leading-5 text-slate-500">
 
@@ -463,6 +470,8 @@
 
 
                         <!-- Submit -->
+                        <p id="formError" role="alert" hidden class="mb-4 flex items-start gap-2 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700"></p>
+
                         <button id="submitButton" type="submit"
                             class="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#6d28d9] px-5 py-3.5 font-['Poppins'] text-sm font-bold text-white shadow-sm transition hover:bg-[#5b21b6] hover:shadow-lg">
 
@@ -487,7 +496,7 @@
                             Don't have an account?
                         </span>
 
-                        <button id="switchButton" type="button" onclick="switchMode()"
+                        <button id="switchButton" type="button"
                             class="ml-1 text-sm font-bold text-[#6d28d9] hover:underline">
                             Create one
                         </button>
@@ -502,7 +511,7 @@
                             verified_user
                         </span>
 
-                        Your information is securely protected
+                        Prototype: your account is stored only in this browser
 
                     </div>
 
@@ -690,152 +699,7 @@
        JAVASCRIPT
   ====================================================== -->
 
-    <script>
-
-        let mode = "login";
-
-
-        function switchMode() {
-
-            mode = mode === "login"
-                ? "register"
-                : "login";
-
-            updateForm();
-
-        }
-
-
-        function updateForm() {
-
-            const badge = document.getElementById("formBadge");
-            const title = document.getElementById("formTitle");
-            const description = document.getElementById("formDescription");
-
-            const nameGroup = document.getElementById("nameGroup");
-            const confirmPasswordGroup = document.getElementById("confirmPasswordGroup");
-            const termsGroup = document.getElementById("termsGroup");
-
-            const forgotPassword = document.getElementById("forgotPassword");
-
-            const submitText = document.getElementById("submitText");
-
-            const switchDescription =
-                document.getElementById("switchDescription");
-
-            const switchButton =
-                document.getElementById("switchButton");
-
-
-            if (mode === "login") {
-
-                badge.textContent = "Welcome back";
-
-                title.textContent = "Sign in to CampPN";
-
-                description.textContent =
-                    "Access your events, registrations, and personalized opportunities.";
-
-                nameGroup.classList.add("hidden");
-
-                confirmPasswordGroup.classList.add("hidden");
-
-                termsGroup.classList.add("hidden");
-
-                forgotPassword.classList.remove("hidden");
-
-                submitText.textContent = "Sign In";
-
-                switchDescription.textContent =
-                    "Don't have an account?";
-
-                switchButton.textContent =
-                    "Create one";
-
-            } else {
-
-                badge.textContent = "Get started";
-
-                title.textContent = "Create your CampPN account";
-
-                description.textContent =
-                    "Join CampPN and discover opportunities built for students.";
-
-                nameGroup.classList.remove("hidden");
-
-                confirmPasswordGroup.classList.remove("hidden");
-
-                termsGroup.classList.remove("hidden");
-
-                forgotPassword.classList.add("hidden");
-
-                submitText.textContent = "Create Account";
-
-                switchDescription.textContent =
-                    "Already have an account?";
-
-                switchButton.textContent =
-                    "Sign in";
-
-            }
-
-        }
-
-
-        function togglePassword(inputId, iconId) {
-
-            const input = document.getElementById(inputId);
-            const icon = document.getElementById(iconId);
-
-            if (input.type === "password") {
-
-                input.type = "text";
-
-                icon.textContent = "visibility_off";
-
-            } else {
-
-                input.type = "password";
-
-                icon.textContent = "visibility";
-
-            }
-
-        }
-
-
-        function handleSubmit(event) {
-
-            event.preventDefault();
-
-            if (mode === "login") {
-
-                alert("Login submitted.");
-
-            } else {
-
-                const password =
-                    document.getElementById("password").value;
-
-                const confirmPassword =
-                    document.getElementById("confirmPassword").value;
-
-                if (password !== confirmPassword) {
-
-                    alert("Passwords do not match.");
-
-                    return;
-
-                }
-
-                alert("Registration submitted.");
-
-            }
-
-        }
-
-    </script>
-    <script type="module" src="../src/main.js"></script>
+    <script type="module" src="../src/pages/join.js"></script>
 </body>
 
 </html>

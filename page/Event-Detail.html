@@ -61,6 +61,11 @@
           My Events
         </a>
 
+        <a href="./Favorites.html"
+          class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-white hover:text-violet-700">
+          Favorites
+        </a>
+
         <a href="./Notifications.html"
           class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-white hover:text-[#6d28d9]">
           Notifications
@@ -136,8 +141,8 @@
 
       <!-- Event Cover -->
       <div class="relative min-h-65 overflow-hidden sm:min-h-85">
-        <img src="../src/assets/Explore-event-assets/teaching-uiux.png" alt="UX/UI"
-          class="min-h-65 overflow-hidden sm:min-h-85">
+        <img id="evCover" src="../src/assets/Explore-event-assets/teaching-uiux.png" alt=""
+          class="h-full min-h-65 w-full object-cover sm:min-h-85">
         <!-- Decorative shapes -->
         <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10"></div>
         <div class="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-white/10"></div>
@@ -152,10 +157,10 @@
             class="inline-flex items-center gap-2 rounded-full bg-white/95 px-3.5 py-2 text-xs font-bold text-[#6d28d9] shadow-sm backdrop-blur">
 
             <span class="material-symbols-outlined text-[17px]">
-              palette
+              <span data-bind="categoryIcon">palette</span>
             </span>
 
-            Design Workshop
+            <span data-bind="category">Design Workshop</span>
 
           </span>
 
@@ -169,7 +174,7 @@
             class="flex h-24 w-24 items-center justify-center rounded-3xl border border-white/30 bg-white/15 shadow-xl backdrop-blur-md sm:h-32 sm:w-32">
 
             <span class="material-symbols-outlined text-[64px] text-white sm:text-[78px]">
-              design_services
+              <span data-bind="categoryIcon">design_services</span>
             </span>
 
           </div>
@@ -183,22 +188,22 @@
           <div class="flex h-12 w-12 flex-col items-center justify-center rounded-xl bg-white shadow-sm">
 
             <span class="text-[10px] font-bold uppercase text-[#6d28d9]">
-              Oct
+              <span data-bind="month">Oct</span>
             </span>
 
             <span class="font-['Poppins'] text-lg font-extrabold leading-none text-[#1f2937]">
-              03
+              <span data-bind="day">03</span>
             </span>
 
           </div>
 
           <div>
             <p class="text-xs font-medium text-white/80">
-              Saturday
+              <span data-bind="weekday">Saturday</span>
             </p>
 
             <p class="font-['Poppins'] text-sm font-bold">
-              2:00 PM – 5:00 PM
+              <span data-bind="timeRange">2:00 PM – 5:00 PM</span>
             </p>
           </div>
 
@@ -225,12 +230,12 @@
 
                 <span class="h-1.5 w-1.5 rounded-full bg-[#8b5cf6]"></span>
 
-                Registration Open
+                <span data-bind="statusText">Registration Open</span>
 
               </span>
 
               <span class="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-600">
-                32 spots remaining
+                <span data-bind="spots">32 spots remaining</span>
               </span>
 
             </div>
@@ -240,18 +245,12 @@
             <h1
               class="max-w-3xl font-['Poppins'] text-3xl font-extrabold leading-tight tracking-tight text-[#1f2937] sm:text-4xl lg:text-5xl">
 
-              UI/UX Design Workshop
+              <span data-bind="title">UI/UX Design Workshop</span>
 
             </h1>
 
 
-            <p class="mt-4 max-w-2xl text-base leading-7 text-slate-500 sm:text-lg">
-
-              Learn practical UI/UX design skills and discover how to create
-              user-friendly digital experiences from research and wireframes
-              to high-fidelity prototypes.
-
-            </p>
+            <p class="mt-4 max-w-2xl text-base leading-7 text-slate-500 sm:text-lg"><span data-bind="summary"></span></p>
 
 
             <!-- Event Meta -->
@@ -274,7 +273,7 @@
                   </p>
 
                   <p class="mt-1 font-semibold text-[#1f2937]">
-                    October 3, 2026
+                    <span data-bind="dateLong">October 3, 2026</span>
                   </p>
                 </div>
 
@@ -298,7 +297,7 @@
                   </p>
 
                   <p class="mt-1 font-semibold text-[#1f2937]">
-                    2:00 PM – 5:00 PM
+                    <span data-bind="timeRange">2:00 PM – 5:00 PM</span>
                   </p>
                 </div>
 
@@ -322,7 +321,7 @@
                   </p>
 
                   <p class="mt-1 font-semibold text-[#1f2937]">
-                    Room B204, Main Campus
+                    <span data-bind="location">Room B204, Main Campus</span>
                   </p>
                 </div>
 
@@ -346,7 +345,7 @@
                   </p>
 
                   <p class="mt-1 font-semibold text-[#1f2937]">
-                    Design Club Cambodia
+                    <span data-bind="organizer">Design Club Cambodia</span>
                   </p>
                 </div>
 
@@ -362,25 +361,8 @@
                 About this event
               </h2>
 
-              <div class="mt-4 space-y-4 text-sm leading-7 text-slate-500 sm:text-base">
-
-                <p>
-                  This hands-on workshop is designed for students who want to
-                  understand the fundamentals of UI/UX design and improve their
-                  digital product design skills.
-                </p>
-
-                <p>
-                  You will explore user research, information architecture,
-                  wireframing, visual design, prototyping, and usability testing
-                  through practical activities.
-                </p>
-
-              </div>
-
+              <div id="aboutBody" class="mt-4 space-y-4 text-sm leading-7 text-slate-500 sm:text-base"></div>
             </div>
-
-
             <!-- What You'll Learn -->
             <div class="mt-10">
 
@@ -388,76 +370,8 @@
                 What you'll learn
               </h2>
 
-              <div class="mt-5 grid gap-3 sm:grid-cols-2">
-
-                <div class="flex items-center gap-3">
-
-                  <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f5f3ff] text-[#6d28d9]">
-                    <span class="material-symbols-outlined text-[18px]">
-                      check
-                    </span>
-                  </span>
-
-                  <span class="text-sm text-slate-600">
-                    User research fundamentals
-                  </span>
-
-                </div>
-
-
-                <div class="flex items-center gap-3">
-
-                  <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f5f3ff] text-[#6d28d9]">
-                    <span class="material-symbols-outlined text-[18px]">
-                      check
-                    </span>
-                  </span>
-
-                  <span class="text-sm text-slate-600">
-                    Wireframing techniques
-                  </span>
-
-                </div>
-
-
-                <div class="flex items-center gap-3">
-
-                  <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f5f3ff] text-[#6d28d9]">
-                    <span class="material-symbols-outlined text-[18px]">
-                      check
-                    </span>
-                  </span>
-
-                  <span class="text-sm text-slate-600">
-                    Design system basics
-                  </span>
-
-                </div>
-
-
-                <div class="flex items-center gap-3">
-
-                  <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f5f3ff] text-[#6d28d9]">
-                    <span class="material-symbols-outlined text-[18px]">
-                      check
-                    </span>
-                  </span>
-
-                  <span class="text-sm text-slate-600">
-                    Interactive prototyping
-                  </span>
-
-                </div>
-
-              </div>
-
+              <div id="learnList" class="mt-5 grid gap-3 sm:grid-cols-2"></div>
             </div>
-
-
             <!-- Organizer -->
             <div class="mt-10 border-t border-slate-200 pt-8">
 
@@ -469,17 +383,17 @@
 
                 <div
                   class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f5f3ff] font-['Poppins'] font-bold text-[#6d28d9]">
-                  DC
+                  <span data-bind="initials">DC</span>
                 </div>
 
                 <div>
 
                   <p class="font-semibold text-[#1f2937]">
-                    Design Club Cambodia
+                    <span data-bind="organizer">Design Club Cambodia</span>
                   </p>
 
                   <p class="mt-1 text-sm text-slate-500">
-                    Student organization · Phnom Penh
+                    <span data-bind="organizerBlurb">Student organization · Phnom Penh</span>
                   </p>
 
                 </div>
@@ -496,7 +410,7 @@
                RIGHT SIDEBAR
           ====================================================== -->
 
-          <aside class="lg:sticky lg:top-28 lg:self-start">
+          <aside id="registration" class="scroll-mt-24 lg:sticky lg:top-28 lg:self-start">
 
             <div class="rounded-3xl border border-[#c4b5fd]/40 bg-[#f5f3ff] p-5 sm:p-6">
 
@@ -510,7 +424,7 @@
                   </p>
 
                   <p class="mt-1 font-['Poppins'] text-3xl font-extrabold text-[#1f2937]">
-                    Free
+                    <span data-bind="entry">Free</span>
                   </p>
 
                 </div>
@@ -532,71 +446,25 @@
                   </span>
 
                   <span class="font-semibold text-[#6d28d9]">
-                    68%
+                    <span data-bind="percent">68%</span>
                   </span>
 
                 </div>
 
                 <div class="h-2 overflow-hidden rounded-full bg-white">
 
-                  <div class="h-full w-[68%] rounded-full bg-[#8b5cf6]"></div>
+                  <div id="seatBar" class="h-full w-[68%] rounded-full bg-[#8b5cf6]"></div>
 
                 </div>
 
                 <p class="mt-2 text-xs text-slate-400">
-                  68 of 100 seats registered
+                  <span data-bind="seatsText">68 of 100 seats registered</span>
                 </p>
 
               </div>
 
 
-              <!-- CTA -->
-              <button type="button"
-                class="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#6d28d9] px-5 py-3.5 font-['Poppins'] text-sm font-bold text-white shadow-sm transition hover:bg-[#5b21b6] hover:shadow-md">
-
-                <span class="material-symbols-outlined text-[20px]">
-                  how_to_reg
-                </span>
-
-                Register for Event
-
-              </button>
-
-
-              <!-- Save -->
-              <button type="button"
-                class="mt-3 flex w-full items-center justify-center gap-2 rounded-xl border border-[#c4b5fd] bg-white px-5 py-3 font-semibold text-[#6d28d9] transition hover:bg-[#f5f3ff]">
-
-                <span class="material-symbols-outlined text-[20px]">
-                  bookmark_border
-                </span>
-
-                Save Event
-
-              </button>
-
-
-              <!-- Reminder -->
-              <div class="mt-6 flex gap-3 border-t border-[#c4b5fd]/50 pt-5">
-
-                <span class="material-symbols-outlined shrink-0 text-[#6d28d9]">
-                  notifications_active
-                </span>
-
-                <div>
-
-                  <p class="text-sm font-semibold text-[#1f2937]">
-                    Don't miss it
-                  </p>
-
-                  <p class="mt-1 text-xs leading-5 text-slate-500">
-                    We'll remind you before the event starts.
-                  </p>
-
-                </div>
-
-              </div>
-
+              <div id="ctaArea" class="mt-6"></div>
             </div>
 
 
@@ -621,7 +489,7 @@
                     </p>
 
                     <p class="text-sm font-medium text-[#1f2937]">
-                      Khmer & English
+                      <span data-bind="language">Khmer & English</span>
                     </p>
                   </div>
 
@@ -640,7 +508,7 @@
                     </p>
 
                     <p class="text-sm font-medium text-[#1f2937]">
-                      University Students
+                      <span data-bind="audience">University Students</span>
                     </p>
                   </div>
 
@@ -650,16 +518,16 @@
                 <div class="flex items-center gap-3">
 
                   <span class="material-symbols-outlined text-[20px] text-slate-400">
-                    verified
+                    <span data-bind="deadlineIcon">verified</span>
                   </span>
 
                   <div>
                     <p class="text-xs text-slate-400">
-                      Certificate
+                      <span data-bind="deadlineLabel">Certificate</span>
                     </p>
 
                     <p class="text-sm font-medium text-[#1f2937]">
-                      Available
+                      <span data-bind="deadlineText">Available</span>
                     </p>
                   </div>
 
@@ -691,7 +559,7 @@
         </div>
 
         <p class="mt-1 text-sm text-slate-500">
-          Join us at the following location for the workshop.
+          <span data-bind="locationIntro">Join us at the following location for the workshop.</span>
         </p>
       </div>
 
@@ -742,7 +610,7 @@
               </span>
 
               <span class="text-xs font-semibold text-[#1f2937]">
-                Workshop Venue
+                <span data-bind="location">Workshop Venue</span>
               </span>
             </div>
 
@@ -770,11 +638,11 @@
 
               <div>
                 <h3 class="font-['Poppins'] text-base font-semibold text-[#1f2937]">
-                  University Innovation Center
+                  <span data-bind="location">University Innovation Center</span>
                 </h3>
 
                 <p class="mt-1 text-sm leading-5 text-slate-500">
-                  Building A, Room 204
+                  <span data-bind="address">Building A, Room 204</span>
                 </p>
 
                 <p class="text-sm text-slate-500">
@@ -786,7 +654,7 @@
 
 
             <!-- Directions Button -->
-            <a href="#" class="group inline-flex shrink-0 items-center justify-center gap-2
+            <a id="directionsLink" href="#" target="_blank" rel="noopener" class="group inline-flex shrink-0 items-center justify-center gap-2
                  rounded-xl bg-[#6d28d9] px-5 py-3 text-sm font-semibold
                  text-white shadow-sm transition-all duration-300
                  hover:bg-[#5b21b6] hover:shadow-lg">
@@ -821,11 +689,11 @@
 
               <div>
                 <p class="text-xs text-slate-400">
-                  Room
+                  <span data-bind="venueTypeLabel">Room</span>
                 </p>
 
                 <p class="text-sm font-medium text-[#1f2937]">
-                  Room 204
+                  <span data-bind="venueType">Room 204</span>
                 </p>
               </div>
 
@@ -861,6 +729,23 @@
          RELATED EVENTS
     ========================================================== -->
 
+    <!-- =========================================================
+         REVIEWS & RATINGS
+    ========================================================== -->
+    <section id="reviewsSection" class="mt-12" aria-labelledby="reviewsTitle">
+      <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
+        <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#8b5cf6]">Student feedback</p>
+            <h2 id="reviewsTitle" class="mt-1 font-['Poppins'] text-2xl font-bold tracking-tight text-[#1f2937]">Reviews &amp; ratings</h2>
+          </div>
+          <div id="ratingSummary" class="flex items-center gap-3"></div>
+        </div>
+        <div id="reviewForm" class="mt-6"></div>
+        <div id="reviewList" class="mt-6 space-y-4"></div>
+      </div>
+    </section>
+
     <section class="mt-12">
 
       <div class="flex items-end justify-between gap-4">
@@ -888,91 +773,8 @@
 
       </div>
 
-      <div class="mt-6 grid gap-5 md:grid-cols-3">
+      <div id="relatedList" class="mt-6 grid gap-5 md:grid-cols-3">
 
-        <!-- Related Event 1 -->
-        <a href="#"
-          class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#c4b5fd] hover:shadow-md">
-
-          <div class="h-36 w-full overflow-hidden">
-            <img src="../src/assets/Explore-event-assets/webdevelopment.png" alt="Web Development Bootcamp"
-              class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
-          </div>
-
-          <div class="p-5">
-            <span class="text-xs font-semibold text-[#6d28d9]">
-              Technology
-            </span>
-
-            <h3 class="mt-2 font-['Poppins'] font-bold text-[#1f2937]">
-              Web Development Bootcamp
-            </h3>
-
-            <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
-              <span class="material-symbols-outlined text-[17px]">
-                calendar_month
-              </span>
-              October 8, 2026
-            </div>
-          </div>
-
-        </a>
-
-        <!-- Related Event 2 -->
-        <a href="#"
-          class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#c4b5fd] hover:shadow-md">
-
-          <div class="h-36 w-full overflow-hidden">
-            <img src="../src/assets/Explore-event-assets/career.png" alt="Career & Internship Fair"
-              class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
-          </div>
-
-          <div class="p-5">
-            <span class="text-xs font-semibold text-[#6d28d9]">
-              Career
-            </span>
-
-            <h3 class="mt-2 font-['Poppins'] font-bold text-[#1f2937]">
-              Career & Internship Fair
-            </h3>
-
-            <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
-              <span class="material-symbols-outlined text-[17px]">
-                calendar_month
-              </span>
-              October 15, 2026
-            </div>
-          </div>
-
-        </a>
-
-        <!-- Related Event 3 -->
-        <a href="#"
-          class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#c4b5fd] hover:shadow-md">
-
-          <div class="h-36 w-full overflow-hidden">
-            <img src="../src/assets/Explore-event-assets/AI&Data.png" alt="AI for Students Seminar"
-              class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
-          </div>
-
-          <div class="p-5">
-            <span class="text-xs font-semibold text-[#6d28d9]">
-              Innovation
-            </span>
-
-            <h3 class="mt-2 font-['Poppins'] font-bold text-[#1f2937]">
-              AI for Students Seminar
-            </h3>
-
-            <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
-              <span class="material-symbols-outlined text-[17px]">
-                calendar_month
-              </span>
-              October 22, 2026
-            </div>
-          </div>
-
-        </a>
 
       </div>
 
@@ -1164,7 +966,7 @@
 
   </nav>
 
-  <script type="module" src="../src/main.js"></script>
+  <script type="module" src="../src/pages/detail.js"></script>
 </body>
 
 </html>

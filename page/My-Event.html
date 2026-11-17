@@ -56,6 +56,11 @@
           My Events
         </a>
 
+        <a href="./Favorites.html"
+          class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-white hover:text-violet-700">
+          Favorites
+        </a>
+
         <a href="./Notifications.html"
           class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-white hover:text-violet-700">
           Notifications
@@ -108,8 +113,7 @@
         <div>
           <h1 class="font-['Poppins'] text-3xl font-extrabold tracking-tight text-[#1f2937] sm:text-4xl"> My Events
           </h1>
-          <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base"> Keep track of the events you joined,
-            registered for, and missed. </p>
+          <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base"> Keep track of the events you registered for, attended, and cancelled. </p>
         </div>
 
         <!-- Explore Button -->
@@ -124,8 +128,8 @@
       <div class="rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
         <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#f5f3ff] text-[#6d28d9]"> <span
             class="material-symbols-outlined"> event </span> </div>
-        <p class="text-xs font-medium text-slate-500"> Total Events </p>
-        <p class="mt-1 font-['Poppins'] text-2xl font-bold text-[#1f2937]"> 5 </p>
+        <p class="text-xs font-medium text-slate-500">Total registrations</p>
+        <p class="mt-1 font-['Poppins'] text-2xl font-bold text-[#1f2937]"><span data-stat="total">0</span></p>
       </div>
 
       <!-- Joined -->
@@ -133,8 +137,8 @@
       <div class="rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
         <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-600"> <span
             class="material-symbols-outlined"> check_circle </span> </div>
-        <p class="text-xs font-medium text-slate-500"> Joined </p>
-        <p class="mt-1 font-['Poppins'] text-2xl font-bold text-[#1f2937]"> 3 </p>
+        <p class="text-xs font-medium text-slate-500">Past events</p>
+        <p class="mt-1 font-['Poppins'] text-2xl font-bold text-[#1f2937]"><span data-stat="past">0</span></p>
       </div>
 
       <!-- Missed -->
@@ -142,8 +146,8 @@
       <div class="rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
         <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 text-red-500"> <span
             class="material-symbols-outlined"> event_busy </span> </div>
-        <p class="text-xs font-medium text-slate-500"> Missed </p>
-        <p class="mt-1 font-['Poppins'] text-2xl font-bold text-[#1f2937]"> 2 </p>
+        <p class="text-xs font-medium text-slate-500">Cancelled</p>
+        <p class="mt-1 font-['Poppins'] text-2xl font-bold text-[#1f2937]"><span data-stat="cancelled">0</span></p>
       </div>
 
       <!-- Upcoming -->
@@ -151,171 +155,17 @@
       <div class="rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
         <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-[#6d28d9]"> <span
             class="material-symbols-outlined"> upcoming </span> </div>
-        <p class="text-xs font-medium text-slate-500"> Upcoming </p>
-        <p class="mt-1 font-['Poppins'] text-2xl font-bold text-[#1f2937]"> 2 </p>
+        <p class="text-xs font-medium text-slate-500">Upcoming</p>
+        <p class="mt-1 font-['Poppins'] text-2xl font-bold text-[#1f2937]"><span data-stat="upcoming">0</span></p>
       </div>
     </section>
     <!-- ========================================================= FILTER TABS ========================================================== -->
     <div class="mb-6 flex items-center justify-between gap-4">
-      <div class="flex overflow-x-auto rounded-xl bg-white p-1 shadow-sm ring-1 ring-violet-100"> <button
-          class="rounded-lg bg-[#6d28d9] px-4 py-2 text-sm font-semibold text-white"> All Events </button> <button
-          class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-[#f5f3ff] hover:text-[#6d28d9]">
-          Joined </button> <button
-          class="rounded-lg px-4 py-2 text-sm font-medium text-slate-500 transition hover:bg-[#f5f3ff] hover:text-[#6d28d9]">
-          Missed </button> </div> <button
-        class="hidden items-center gap-2 rounded-xl border border-violet-100 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 transition hover:border-violet-200 hover:text-[#6d28d9] sm:flex">
-        <span class="material-symbols-outlined text-[18px]"> filter_list </span> Filter </button>
+      <div id="myTabs" role="tablist" aria-label="My events filter" class="flex overflow-x-auto rounded-xl bg-white p-1 shadow-sm ring-1 ring-violet-100"></div>
     </div>
 
     <!-- ========================================================= EVENT LIST ========================================================== -->
-    <section class="space-y-4">
-
-      <!-- EVENT 01 — JOINED -->
-
-      <article class="event-card overflow-hidden rounded-2xl border border-violet-100 bg-white shadow-sm">
-        <div class="flex flex-col sm:flex-row"> <!-- Image -->
-          <div class="relative h-48 shrink-0 overflow-hidden bg-[#f5f3ff] sm:h-auto sm:w-56"> <img
-              src="../src/assets/Explore-event-assets/AI&Data.png" alt="Technology Workshop"
-              class="event-image h-full w-full object-cover"> <span
-              class="absolute left-3 top-3 rounded-full bg-green-500 px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
-              Joined </span>
-          </div>
-
-          <!-- Content -->
-
-          <div class="flex flex-1 flex-col justify-between p-5">
-            <div>
-              <div class="mb-2 flex items-center gap-2 text-xs font-medium text-[#6d28d9]"> <span
-                  class="material-symbols-outlined text-[16px]"> school </span> Workshop </div>
-              <h2 class="font-['Poppins'] text-lg font-bold text-[#1f2937]"> Future Technology Workshop </h2>
-              <p class="mt-2 line-clamp-2 text-sm leading-6 text-slate-500"> Learn about emerging technologies, AI, and
-                the skills students need for the future. </p>
-            </div>
-            <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div class="flex flex-wrap gap-4 text-xs text-slate-500"> <span class="flex items-center gap-1.5"> <span
-                    class="material-symbols-outlined text-[17px] text-[#8b5cf6]"> calendar_month </span> Sep 24, 2026
-                </span> <span class="flex items-center gap-1.5"> <span
-                    class="material-symbols-outlined text-[17px] text-[#8b5cf6]"> location_on </span> Main Hall </span>
-              <a href="./Event-Detail.html"
-                class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-violet-200 px-4 py-2 text-xs font-semibold text-[#6d28d9] transition hover:bg-[#f5f3ff]">
-                View Details <span class="material-symbols-outlined text-[16px]"> arrow_forward </span> </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- EVENT 02 — JOINED -->
-
-      <article class="event-card overflow-hidden rounded-2xl border border-violet-100 bg-white shadow-sm">
-        <div class="flex flex-col sm:flex-row">
-          <div class="relative h-48 shrink-0 overflow-hidden bg-[#f5f3ff] sm:h-auto sm:w-56"> <img
-              src="../src/assets/Explore-event-assets/career.png" alt="Career Fair"
-              class="event-image h-full w-full object-cover"> <span
-              class="absolute left-3 top-3 rounded-full bg-green-500 px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
-              Joined </span> </div>
-          <div class="flex flex-1 flex-col justify-between p-5">
-            <div>
-              <div class="mb-2 flex items-center gap-2 text-xs font-medium text-[#6d28d9]"> <span
-                  class="material-symbols-outlined text-[16px]"> work </span> Career </div>
-              <h2 class="font-['Poppins'] text-lg font-bold text-[#1f2937]"> University Career Fair 2026 </h2>
-              <p class="mt-2 line-clamp-2 text-sm leading-6 text-slate-500"> Meet leading companies, discover
-                internships, and connect with professionals. </p>
-            </div>
-            <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div class="flex flex-wrap gap-4 text-xs text-slate-500"> <span class="flex items-center gap-1.5"> <span
-                    class="material-symbols-outlined text-[17px] text-[#8b5cf6]"> calendar_month </span> Sep 20, 2026
-                </span> <span class="flex items-center gap-1.5"> <span
-                    class="material-symbols-outlined text-[17px] text-[#8b5cf6]"> location_on </span> Student Center
-                </span> </div> <a href="./Event-Detail.html"
-                class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-violet-200 px-4 py-2 text-xs font-semibold text-[#6d28d9] transition hover:bg-[#f5f3ff]">
-                View Details <span class="material-symbols-outlined text-[16px]"> arrow_forward </span> </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- EVENT 03 — JOINED -->
-
-      <article class="event-card overflow-hidden rounded-2xl border border-violet-100 bg-white shadow-sm">
-        <div class="flex flex-col sm:flex-row">
-          <div class="relative h-48 shrink-0 overflow-hidden bg-[#f5f3ff] sm:h-auto sm:w-56"> <img
-              src="../src/assets/Explore-event-assets/riverside.png" alt="Student Leadership"
-              class="event-image h-full w-full object-cover"> <span
-              class="absolute left-3 top-3 rounded-full bg-green-500 px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
-              Joined </span> </div>
-          <div class="flex flex-1 flex-col justify-between p-5">
-            <div>
-              <div class="mb-2 flex items-center gap-2 text-xs font-medium text-[#6d28d9]"> <span
-                  class="material-symbols-outlined text-[16px]"> groups </span> Community </div>
-              <h2 class="font-['Poppins'] text-lg font-bold text-[#1f2937]"> Student Leadership Meetup </h2>
-              <p class="mt-2 line-clamp-2 text-sm leading-6 text-slate-500"> Connect with student leaders and share
-                ideas for improving campus life. </p>
-            </div>
-            <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div class="flex flex-wrap gap-4 text-xs text-slate-500"> <span class="flex items-center gap-1.5"> <span
-                    class="material-symbols-outlined text-[17px] text-[#8b5cf6]"> calendar_month </span> Sep 16, 2026
-                </span> <span class="flex items-center gap-1.5"> <span
-                    class="material-symbols-outlined text-[17px] text-[#8b5cf6]"> location_on </span> Conference Room A
-                </span> </div> <a href="./Event-Detail.html"
-                class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-violet-200 px-4 py-2 text-xs font-semibold text-[#6d28d9] transition hover:bg-[#f5f3ff]">
-                View Details <span class="material-symbols-outlined text-[16px]"> arrow_forward </span> </a>
-            </div>
-          </div>
-        </div>
-      </article> <!-- EVENT 04 — MISSED -->
-      <article class="event-card overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div class="flex flex-col sm:flex-row">
-          <div class="relative h-48 shrink-0 overflow-hidden bg-slate-100 sm:h-auto sm:w-56"> <img
-              src="../src/assets/Explore-event-assets/competition.png" alt="Hackathon"
-              class="event-image h-full w-full object-cover grayscale-20"> <span
-              class="absolute left-3 top-3 rounded-full bg-[#f62440] px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
-              Missed </span> </div>
-          <div class="flex flex-1 flex-col justify-between p-5">
-            <div>
-              <div class="mb-2 flex items-center gap-2 text-xs font-medium text-[#f62440]"> <span
-                  class="material-symbols-outlined text-[16px]"> code </span> Competition </div>
-              <h2 class="font-['Poppins'] text-lg font-bold text-[#1f2937]"> Campus Innovation Hackathon </h2>
-              <p class="mt-2 line-clamp-2 text-sm leading-6 text-slate-500"> A student challenge focused on creating
-                innovative solutions for real-world problems. </p>
-            </div>
-            <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div class="flex flex-wrap gap-4 text-xs text-slate-500"> <span class="flex items-center gap-1.5"> <span
-                    class="material-symbols-outlined text-[17px]"> calendar_month </span> Sep 10, 2026 </span> <span
-                  class="flex items-center gap-1.5"> <span class="material-symbols-outlined text-[17px]"> location_on
-                  </span> Innovation Lab </span> </div> <a href="./Event-Detail.html"
-                class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-600 transition hover:bg-slate-50">
-                View Details <span class="material-symbols-outlined text-[16px]"> arrow_forward </span> </a>
-            </div>
-          </div>
-        </div>
-      </article> <!-- EVENT 05 — MISSED -->
-      <article class="event-card overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div class="flex flex-col sm:flex-row">
-          <div class="relative h-48 shrink-0 overflow-hidden bg-slate-100 sm:h-auto sm:w-56"> <img
-              src="../src/assets/Explore-event-assets/uxui.png" alt="Design Seminar"
-              class="event-image h-full w-full object-cover grayscale-20"> <span
-              class="absolute left-3 top-3 rounded-full bg-[#f62440] px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
-              Missed </span> </div>
-          <div class="flex flex-1 flex-col justify-between p-5">
-            <div>
-              <div class="mb-2 flex items-center gap-2 text-xs font-medium text-[#f62440]"> <span
-                  class="material-symbols-outlined text-[16px]"> design_services </span> Seminar </div>
-              <h2 class="font-['Poppins'] text-lg font-bold text-[#1f2937]"> Creative Design Seminar </h2>
-              <p class="mt-2 line-clamp-2 text-sm leading-6 text-slate-500"> Explore modern design principles, creative
-                thinking, and practical design workflows. </p>
-            </div>
-            <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div class="flex flex-wrap gap-4 text-xs text-slate-500"> <span class="flex items-center gap-1.5"> <span
-                    class="material-symbols-outlined text-[17px]"> calendar_month </span> Sep 5, 2026 </span> <span
-                  class="flex items-center gap-1.5"> <span class="material-symbols-outlined text-[17px]"> location_on
-                  </span> Design Studio </span> </div> <a href="./Event-Detail.html"
-                class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-600 transition hover:bg-slate-50">
-                View Details <span class="material-symbols-outlined text-[16px]"> arrow_forward </span> </a>
-            </div>
-          </div>
-        </div>
-      </article>
-    </section> <!-- Bottom message -->
+    <section id="myList" class="space-y-4" aria-live="polite"></section> <!-- Bottom message -->
     <div class="mt-8 rounded-2xl border border-violet-100 bg-white p-6 text-center shadow-sm">
       <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#f5f3ff] text-[#6d28d9]"> <span
           class="material-symbols-outlined hover:rotate-180"> explore </span> </div>
@@ -393,7 +243,7 @@
         class="material-symbols-outlined text-[22px] transition-all ease-in-out duration-300 hover:-translate-y-2 hover:scale-110  hover:bg-violet-700 hover:shadow-xl hover:text-white hover:rounded-full hover:p-2">notifications</span>
     </a>
   </nav>
-  <script type="module" src="../src/main.js"></script>
+  <script type="module" src="../src/pages/my-events.js"></script>
 </body>
 
 </html>
